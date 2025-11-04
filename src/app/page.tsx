@@ -9,6 +9,15 @@ export default function Home() {
       <main className="w-full px-6 md:px-12 py-8">
         <div className="max-w-7xl mx-auto">
           <section className="space-y-8">
+            {/* THE STORY OF BUILDING K·I | ME */}
+            <div className="p-2">
+              <h1 className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-center whitespace-nowrap ">
+                K·I
+              </h1>
+            </div>
+            {/* Horizontal divider */}
+            <hr className="border-b border-[var(--ui-2)] w-full opacity-70" />
+
             {/* Icon at top center */}
             <div className="flex justify-center">
               <Image
@@ -21,29 +30,17 @@ export default function Home() {
               />
             </div>
 
-            {/* Horizontal divider */}
-            <hr className="border-b border-[var(--ui-2)] w-full" />
-
-            <div className="p-2">
-              <h1 className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-center whitespace-nowrap">
-                BUILDING K·I | ME
-              </h1>
-            </div>
-
-            {/* Horizontal divider */}
-            <hr className="border-b border-[var(--ui-2)] w-full" />
-
             {/* origin story section */}
             <div className="space-y-6">
               <div className="space-y-4">
-                <h2 className="text-2xl font-bold text-[var(--accent)]">
-                  Origin Story
+                <h2 className="text-3xl font-bold text-[var(--accent)] italic text-center ">
+                  ~ Origin Story ~
                 </h2>
 
-                <h3 className="text-2xl font-bold text-[var(--accent-2)]">
-                  falling
+                <h3 className="text-2xl font-bold text-[var(--accent-2)] italic text-center">
+                  · falling ·
                 </h3>
-                <p className="text-sm italic text-[var(--tx-2)]">
+                <p className="text-sm italic text-[var(--tx-2)] text-center">
                   [march 2022] {"{"}mindset ~ i have life all figured out.{"}"}
                 </p>
                 <p className="text-base leading-relaxed">
@@ -72,8 +69,9 @@ export default function Home() {
                   grapple with what had happened, i remember being filled with
                   such{" "}
                   <em>
-                    shame, guilt, blame, Self-hate... how did i let this happen?
-                    i am disgusting. i hate every cell in my being.
+                    shame, guilt, blame, Self-<strong>hate</strong>... how did i
+                    let this happen? i am disgusting. i <strong>hate</strong>{" "}
+                    every cell in my being.
                   </em>{" "}
                   i remember thinking how excited i was for seven years to pass
                   so that all of my body&apos;s cells could regenerate and i
@@ -94,8 +92,8 @@ export default function Home() {
                   />
                 </div>
 
-                <h3 className="text-2xl font-bold text-[var(--accent-2)]">
-                  falling still
+                <h3 className="text-2xl font-bold text-[var(--accent-2)] italic text-center">
+                  · falling still ·
                 </h3>
                 <p className="text-base leading-relaxed">
                   following this blackout, i fell deeper into my destructive
@@ -123,37 +121,51 @@ export default function Home() {
               </div>
 
               {/* Horizontal divider */}
-              <hr className="border-t border-[var(--ui-2)] w-full" />
+              <hr className="border-t border-[var(--ui-2)] w-full opacity-70" />
 
               <div className="text-center space-y-2 py-6">
                 <p className="text-base text-[var(--accent)]">
                   to be so broken
                 </p>
                 <p className="text-base text-[var(--accent)]">to have</p>
-                <p className="text-base text-[var(--accent)] tracking-widest">
+                <p className="text-base text-[var(--accent)] tracking-widest font-bold">
                   f a l l e n
                 </p>
-                <p className="text-base text-[var(--accent)]">so deeply</p>
+                <p className="text-base text-[var(--accent)] font-bold">
+                  so deeply
+                </p>
                 <p className="text-base text-[var(--accent-2)]">
                   that the only thing
                 </p>
                 <p className="text-base text-[var(--accent-2)]">
                   you can do is
                 </p>
-                <p className="text-base text-[var(--accent-2)] tracking-widest">
+                <p className="text-base text-[var(--accent-2)] tracking-widest font-bold">
                   r i s e
                 </p>
-                <p className="text-base text-[var(--accent-2)]">
+                <p className="text-base text-[var(--accent-2)] font-bold">
                   into a new you
                 </p>
-                <p className="text-base italic mt-4 text-[var(--accent)]">
+                <p className="text-base italic mt-4 text-[var(--accent)] font-bold">
                   (phoenix)
+                </p>
+                <br />
+                <p className="text-base mt-4 text-[var(--tx-2)] italic">
+                  [yung pueblo ~ inward]
                 </p>
               </div>
             </div>
 
             {/* Horizontal divider */}
-            <hr className="border-t border-[var(--ui-2)] w-full" />
+            <hr className="border-b border-[var(--ui-2)] w-full opacity-70" />
+
+            {/* BUILDING K·I | ME */}
+            <div className="space-y-6">
+              <h1 className="text-3xl font-bold text-[var(--accent)] italic text-center">
+                ~ BUILDING K·I | ME ~
+              </h1>
+              <br />
+            </div>
 
             {/* Demo Section */}
             {/* <div className="space-y-4">

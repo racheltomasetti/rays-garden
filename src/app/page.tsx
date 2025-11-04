@@ -39,8 +39,6 @@ export default function Home() {
                 <h2 className="text-2xl font-bold text-[var(--accent)]">
                   Origin Story
                 </h2>
-                {/* Horizontal divider */}
-                <hr className="border-t border-[var(--ui-2)] w-full" />
 
                 <h3 className="text-2xl font-bold text-[var(--accent-2)]">
                   falling

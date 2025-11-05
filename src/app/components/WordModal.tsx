@@ -55,7 +55,7 @@ export default function WordModal({
 
       {/* Modal content */}
       <div
-        className="relative bg-[var(--bg-2)] border border-[var(--ui-2)] rounded-lg shadow-2xl max-w-lg w-full max-h-[80vh] overflow-y-auto animate-scale-in"
+        className="relative bg-[var(--bg-2)] border border-[var(--ui-2)] rounded-lg shadow-2xl max-w-3xl w-full max-h-[80vh] overflow-y-auto animate-scale-in"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}

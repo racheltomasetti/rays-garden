@@ -196,30 +196,391 @@ export default function Home() {
 
             {/* BUILDING K·I */}
             <div className="space-y-6">
-              <h2 className="text-3xl font-bold text-[var(--accent)] italic text-center">
-                and now?
+              <h2 className="text-2xl font-bold text-[var(--tx)] opacity-80 italic text-center">
+                and NOW ?
               </h2>
 
-              <h2 className="text-4xl font-bold text-[var(--accent-2)] italic text-center">
-                i am building ~ K·I ~
+              <h2 className="text-3xl font-bold text-[var(--accent)] italic text-center">
+                {" "}
+                i am
+              </h2>
+
+              <h2 className="text-4xl font-bold text-[var(--accent)] italic text-center">
+                BUILDING{" "}
+                <ClickableWord
+                  word=" ~ K·I ~"
+                  definition="the universal life force that connects us all --- vital energy that flows through all living things --- LOVE"
+                  etymology="From Chinese 'qì' (氣) meaning `air, breath, gas, spirit, vital energy`. The character originally depicted vapor or steam rising, representing the subtle life force that animates all beings. Also written as 'chi' or 'ki' (Japanese pronunciation)."
+                  additionalContext={
+                    <>
+                      <p>
+                        K·I is your core essence—the vital energy at your center
+                        when everything else is stripped away. Just as qi flows
+                        through the body in traditional Chinese medicine, your
+                        K·I is the life force within you that seeks expression.
+                        Through daily practice in the NOW, K·I cultivates
+                        Self-LOVE in the pursuit of LOVE.
+                      </p>
+                    </>
+                  }
+                  accentColor="accent-2"
+                />{" "}
               </h2>
 
               <h3 className="text-3xl font-bold text-[var(--accent-2)] italic text-center">
-                · an AI journal for the Self ·
+                ·{" "}
+                <ClickableWord
+                  word="AI"
+                  definition="Artificial Intelligence; technology capable of processing information, recognizing patterns, and augmenting human cognitive capabilities. Intelligence on tap."
+                  etymology="
+'Artificial' from Latin 'artificialis' meaning 'of or belonging to art,' from 'artificium' (craftsmanship, art, skill), from 'artifex' (craftsman, artist). 'Intelligence' from Latin 'intelligentia' meaning `understanding, knowledge,` from 'intelligere' (to understand), literally `to choose between,` from 'inter' (between) + 'legere' (to choose, read). First used together in 1955 at the Dartmouth Conference to describe machines that could simulate human intelligence."
+                  additionalContext={
+                    <>
+                      <p>
+                        AI is the how—some of the magic that makes K·I possible.
+                        AI can process vast amounts of your thoughts, find
+                        patterns you cannot see, synthesize scattered ideas into
+                        coherence, and help you visualize the narrative of your
+                        becoming. But AI is only transformative when used as a
+                        tool, not as a replacement for your own thinking. In
+                        K·I, AI augments your living practice by doing what it
+                        does best—processing large amounts of various data
+                        streams, revealing connections, reflecting patterns,
+                        organizing streams of consciousness—while you remain the
+                        author of your life. The combination of your mind + AI
+                        creates a system where technology serves transformation,
+                        where digital processing illuminates the daily work of
+                        showing up for yourself. AI makes it possible to bring
+                        multiple streams of data together, crafting a living
+                        narrative of your journey back to Self.
+                      </p>
+                    </>
+                  }
+                  accentColor="accent"
+                />{" "}
+                <ClickableWord
+                  word="JOURNAL"
+                  definition="A daily record; a personal space for capturing thoughts, experiences, emotions, and ideas. A tool for self-reflection and transformation that documents the journey of becoming."
+                  etymology="Old French 'jornal' (12th century), derived from Latin 'diurnalis' meaning `daily,` from 'diurnus' (of the day), from 'dies' (day). Originally meant `that which belongs to the day.` The word shares its root with 'journey'—both originally referred to a day's passage, whether through pages or miles."
+                  additionalContext={
+                    <>
+                      <p>
+                        The journal is your daily practice of showing up. It is
+                        where you think, explore curiosities, capture dreams,
+                        process emotions, and excavate truth. Through consistent
+                        daily presence, the journal becomes a mirror—revealing
+                        patterns, clearing mental clutter, and helping you strip
+                        away ego to reconnect with your essential Self. When
+                        powered by AI, the journal transforms from static pages
+                        into a living system that can process, synthesize, and
+                        illuminate the narrative of your becoming. It is both
+                        the what and the how—the container for your daily work
+                        and the method of transformation itself.
+                      </p>
+                    </>
+                  }
+                  accentColor="accent"
+                />{" "}
+                for the{" "}
+                <ClickableWord
+                  word="Self"
+                  definition="The core essence of who you are beneath conditioning, ego, and habitual thinking. Your authentic nature stripped of all that is not truly you. The unchanging awareness at your center."
+                  etymology="From Old English 'self, seolf, sylf' meaning `one's own person,` from Proto-Germanic '*selbaz'. The capitalization distinguishes this deeper essence from the lowercase 'self' of ego and personality. The capital S Self points to what remains when everything else falls away."
+                  additionalContext={
+                    <>
+                      <p>
+                        In K·I, Self (capital S) represents the destination and
+                        the practice. Through daily journaling and clearing the
+                        mind, you move past the noise of ego and societal
+                        conditioning to discover your core essence—your KI. This
+                        is not self-improvement but self-remembering. It is the
+                        who you are building this for: the individual seeking to
+                        reconnect with their authentic nature, to live from
+                        their center rather than from reaction or habit. The
+                        Self is what emerges when you consistently show up in
+                        the NOW.
+                      </p>
+                    </>
+                  }
+                  accentColor="accent"
+                />{" "}
+                ·
               </h3>
               <h3 className="text-3xl font-bold text-[var(--accent-2)] italic text-center">
-                ~ making LOVE a way of life ~
+                ~ making{" "}
+                <ClickableWord
+                  word="NOW"
+                  definition="The present moment; the only point in time where life actually occurs and where choice exists. The eternal instant that contains all possibility."
+                  etymology="
+From Old English 'nu' meaning `now, at present,` from Proto-Germanic '* QWZS  QWnu'. Related to Latin 'nunc' and Greek 'nun', all representing the immediate present moment. The capitalization emphasizes its significance as both a temporal location and a state of consciousness."
+                  additionalContext={
+                    <>
+                      <p>
+                        The NOW is where the transformation happens. Each
+                        thought capture is an act of arriving here, in this
+                        moment, clearing away the mental chatter about past and
+                        future that pulls you away from your Self. Showing up
+                        daily in the NOW means meeting yourself exactly where
+                        you are without judgment—observing your thoughts,
+                        emotions, and patterns with presence rather than getting
+                        lost in them. K·I helps you anchor in the NOW by
+                        capturing what is alive in you right now, creating a
+                        practice of returning to presence. The NOW is both the
+                        practice and the gift: when you are here, you are free
+                        from the ego&apos;s stories and can access your
+                        essential nature.
+                      </p>
+                    </>
+                  }
+                  accentColor="accent"
+                />{" "}
+                a daily practice ~
+              </h3>
+
+              <h3 className="text-3xl font-bold text-[var(--accent-2)] italic text-center">
+                ~ · with{" "}
+                <ClickableWord
+                  word="LOVE"
+                  definition="A way of being and living characterized by presence, acceptance, compassion, and connection—both with yourself and the world around you. Not merely an emotion, but a practice and orientation toward life."
+                  etymology="From Old English 'lufu' meaning `love, affection, friendliness,` from Proto-Germanic '*lubō'. Related to Latin 'libet' (it pleases) and 'lubido' (desire). The capitalization emphasizes LOVE as being unconditional, a philosophy and practice rather than just a feeling."
+                  additionalContext={
+                    <>
+                      <p>
+                        LOVE is the why—the philosophy underlying K·I. Making
+                        LOVE a way of life means choosing presence over
+                        distraction, self-compassion over self-criticism,
+                        curiosity over judgment. It is the energy you bring to
+                        the daily practice of showing up for yourself. Through
+                        living with K·I, you learn to approach your thoughts,
+                        emotions, and experiences with loving awareness rather
+                        than harsh judgment. LOVE becomes the lens through which
+                        you see yourself and craft your life. It transforms the
+                        tool from a thought capture device into a practice of
+                        radical self-acceptance and intentional living.
+                      </p>
+                    </>
+                  }
+                  accentColor="accent"
+                />{" "}
+                as a way of life · ~
               </h3>
 
               <p className="text-sm italic text-[var(--tx-2)] text-center">
                 [NOW] {"{"}mind setting ~ LOVE{"}"}
               </p>
 
+              {/* Photo */}
+              <div className="flex flex-col items-center py-6">
+                <Image
+                  src="/story/media/photos/love.jpg"
+                  alt="Self-love mandala"
+                  width={500}
+                  height={500}
+                  quality={95}
+                  className="rounded-md"
+                />
+                <p className="text-sm italic text-[var(--tx-2)] mt-3">
+                  ~ LOVE is the key ~
+                </p>
+              </div>
+
+              {/* Quote */}
+              <div className="text-center py-4 max-w-2xl mx-auto">
+                <h3 className="text-xl leading-relaxed italic font-bold text-[var(--tx)]">
+                  <span className="text-[var(--accent-2)]">
+                    when we strive to become better than we are, everything
+                    around us becomes better too ...
+                  </span>{" "}
+                  <span className="text-[var(--accent)]">
+                    and when we love, we always strive to become better than we
+                    are.
+                  </span>
+                </h3>
+                <p className="text-base mt-4 text-[var(--tx-2)] italic">
+                  [paulo coelho ~ the alchemist]
+                </p>
+              </div>
+
+              {/* Horizontal divider */}
+              <hr className="border-t border-[var(--ui-2)] w-3/4 mx-auto opacity-70" />
+
+              <div className="text-center space-y-2 py-6">
+                <p className="text-base text-[var(--tx)]">
+                  it may have taken a long time,
+                </p>
+                <p className="text-base text-[var(--tx)]">
+                  but in the end it did not matter.
+                </p>
+                <p className="text-base text-[var(--tx)]">
+                  after much healing through
+                </p>
+                <p className="text-base text-[var(--tx)]">
+                  <strong>self-observation</strong> she now had
+                </p>
+                <p className="text-base text-[var(--tx)]">
+                  <em>strength</em>, she now had <em>courage</em>,
+                </p>
+                <p className="text-base text-[var(--tx)]">
+                  and the <em>wisdom</em> to wield her new
+                </p>
+                <p className="text-base text-[var(--tx)]">
+                  magic with virtue.{" "}
+                  <span className="text-[var(--accent)] italic">
+                    no longer did
+                  </span>
+                </p>
+                <p className="text-base text-[var(--accent)] italic">
+                  she run from her pain or her
+                </p>
+                <p className="text-base text-[var(--accent)] italic">
+                  troubles, no longer did she allow
+                </p>
+                <p className="text-base text-[var(--accent)]">
+                  delusions to capture her mind, no
+                </p>
+                <p className="text-base text-[var(--accent)] italic ">
+                  longer did she doubt that{" "}
+                  <span className="text-[var(--accent-2)] font-bold">
+                    the greatest
+                  </span>
+                </p>
+                <p className="text-base text-[var(--accent-2)] font-bold italic">
+                  healer she has ever met is her own
+                </p>
+                <p className="text-base text-[var(--accent-2)] font-bold italic">
+                  unconditional love.
+                </p>
+                <br />
+                <p className="text-base italic mt-4 text-[var(--accent-2)] font-bold">
+                  (you are a healer)
+                </p>
+                <br />
+                <p className="text-base mt-4 text-[var(--tx-2)] italic">
+                  [yung pueblo ~ inward]
+                </p>
+              </div>
+
               <br />
             </div>
 
             {/* Horizontal divider */}
             <hr className="border-b border-[var(--ui-2)] w-full opacity-70" />
+
+            <div className="flex justify-center">
+              <Image
+                src="/icon.png"
+                alt="K·I Logo"
+                width={50}
+                height={50}
+                className="rounded-full animate-bob"
+                priority
+              />
+            </div>
+
+            {/* building me */}
+            <div className="space-y-6 py-8">
+              <h2 className="text-3xl font-bold text-[var(--accent-2)] italic text-center">
+                ~ building me ~
+              </h2>
+
+              <div className="max-w-3xl mx-auto space-y-4 text-center">
+                <p className="text-base leading-relaxed">
+                  i know—we jumped from the beginning to here, and you might be
+                  wondering: how did we get here?
+                </p>
+                <p className="text-base leading-relaxed font-semibold">
+                  everything contributed. every single day.
+                </p>
+                <p className="text-base leading-relaxed">
+                  three years of learning, growing, building, breaking. rewiring
+                  habits one day at a time. running until my body found a love
+                  for movement. capturing my thoughts even when i had no idea
+                  what to write. learning that my mind and body were never
+                  separate. realizing my cycle wasn&apos;t something to manage
+                  but a tool for understanding myself. building Self-belief
+                  brick by brick when no one else could see what i was creating.
+                </p>
+                <p className="text-base leading-relaxed text-[var(--tx-2)]">
+                  struggling to start. feeling stuck, lost, confused. being
+                  misunderstood by the people closest to me. questioning
+                  everything. doubting myself.
+                </p>
+                <p className="text-base leading-relaxed">
+                  and then—i started building. i stopped getting caught up in my
+                  head and started doing.
+                </p>
+                <p className="text-base leading-relaxed font-semibold text-[var(--accent-2)]">
+                  that&apos;s when everything fell into place.
+                </p>
+                <p className="text-base leading-relaxed">
+                  because building K·I and building me were never separate
+                  journeys. they are one and the same. all of my experiences,
+                  light and dark, were building blocks for the journey. every
+                  feature I built taught me something about how i work, what i
+                  need, who i am. the building of this tool is shaping me as
+                  much as i am shaping it.
+                </p>
+                <p className="text-base leading-relaxed font-semibold">
+                  that&apos;s how we got here. that&apos;s how you get there,
+                  wherever it is you desire to go.
+                </p>
+                <p className="text-base leading-relaxed text-[var(--accent)] italic font-bold">
+                  one day at a time. live in the NOW.
+                </p>
+              </div>
+
+              {/* Photo */}
+              <div className="flex flex-col items-center py-6">
+                <Image
+                  src="/story/media/photos/future-is-now.jpg"
+                  alt="The future is now"
+                  width={600}
+                  height={400}
+                  quality={95}
+                  className="rounded-md"
+                />
+              </div>
+            </div>
+
+            {/* Horizontal divider */}
+            <hr className="border-b border-[var(--ui-2)] w-full opacity-70" />
+
+            {/* Quote */}
+            <div className="text-center py-4 max-w-2xl mx-auto">
+              <h3 className="text-xl leading-relaxed italic font-bold text-[var(--tx)]">
+                <span className="text-[var(--tx)]">
+                  and it may be that what we have is a world not on the verge of
+                  flying apart, but an uncreated one --- still in shapeless
+                  fragments waiting to be put together properly.
+                </span>{" "}
+                <span className="text-[var(--accent)]">
+                  i imagine that when we want something better, we may have it:
+                  at perhaps no greater price than we have already paid for the
+                  worse.
+                </span>
+              </h3>
+              <p className="text-base mt-4 text-[var(--tx-2)] italic">
+                [katherine anne porter ~ the future is now]
+              </p>
+              <br />
+              {/* Icon at top center */}
+              <div className="flex justify-center">
+                <Image
+                  src="/icon.png"
+                  alt="K·I Logo"
+                  width={50}
+                  height={50}
+                  className="rounded-full animate-bob"
+                  priority
+                />
+              </div>
+            </div>
+            {/* Horizontal divider */}
+            <hr className="border-b border-[var(--ui-2)] w-full opacity-70" />
+            <h1 className="text-base mt-4 text-[var(--tx)] font-bold text-center">
+              <span className="text-[var(--accent)]">BUILT WITH LOVE</span> |{" "}
+              <span className="text-[var(--accent-2)]">BUILT WITH K·I</span>
+            </h1>
 
             {/* Demo Section */}
             {/* <div className="space-y-4">

@@ -291,6 +291,14 @@ html.light audio.audio-player::-internal-media-controls-overflow-button {
 }
 
 @layer utilities {
+  /* Accent color utilities */
+  .text-accent {
+    color: var(--accent);
+  }
+  .text-accent-2 {
+    color: var(--accent-2);
+  }
+
   /* Color palette utilities */
   .text-re {
     color: var(--re);

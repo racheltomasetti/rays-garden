@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import ClickableWord from "./components/ClickableWord";
 
 export default function Home() {
   return (
@@ -10,9 +11,9 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <section className="space-y-8">
             {/* THE STORY OF BUILDING K·I | ME */}
-            <div className="p-2">
+            <div className="p-2 flex items-center justify-center gap-4">
               <h1 className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-center whitespace-nowrap ">
-                K·I
+                ~ K·I ~
               </h1>
             </div>
             {/* Horizontal divider */}
@@ -34,7 +35,7 @@ export default function Home() {
             <div className="space-y-6">
               <div className="space-y-4">
                 <h2 className="text-3xl font-bold text-[var(--accent)] italic text-center ">
-                  ~ Origin Story ~
+                  the origin story of ~ K·I ~
                 </h2>
 
                 <h3 className="text-2xl font-bold text-[var(--accent-2)] italic text-center">
@@ -43,6 +44,8 @@ export default function Home() {
                 <p className="text-sm italic text-[var(--tx-2)] text-center">
                   [march 2022] {"{"}mindset ~ i have life all figured out.{"}"}
                 </p>
+                {/* horizontal divider */}
+                <hr className="border-b border-[var(--ui-2)] w-full opacity-70" />
                 <p className="text-base leading-relaxed">
                   freshman year consisted of a series of blackouts. one of the{" "}
                   <em>freakiest neurological occurences</em> also happens to be
@@ -121,7 +124,7 @@ export default function Home() {
               </div>
 
               {/* Horizontal divider */}
-              <hr className="border-t border-[var(--ui-2)] w-full opacity-70" />
+              <hr className="border-t border-[var(--ui-2)] w-3/4 mx-auto opacity-70" />
 
               <div className="text-center space-y-2 py-6">
                 <p className="text-base text-[var(--accent)]">
@@ -147,7 +150,28 @@ export default function Home() {
                   into a new you
                 </p>
                 <p className="text-base italic mt-4 text-[var(--accent)] font-bold">
-                  (phoenix)
+                  (
+                  <ClickableWord
+                    word="phoenix"
+                    definition="A mythical bird that cyclically regenerates or is otherwise born again. Associated with the sun, a phoenix obtains new life by rising from the ashes of its predecessor."
+                    etymology="From Greek 'phoinix' (φοῖνιξ) meaning 'purple-red' or 'Phoenician'. In Greek mythology, the phoenix was a long-lived bird that was reborn from its own ashes."
+                    additionalContext={
+                      <>
+                        <p className="mb-2">
+                          The phoenix represents transformation, renewal, and
+                          the triumph of life over death. It symbolizes the
+                          ability to rise from ones own destruction, emerging
+                          stronger and more beautiful than before.
+                        </p>
+                        <p>
+                          In your journey, the phoenix represents the profound
+                          transformation that comes from confronting your
+                          darkest moments and using them as fuel for rebirth.
+                        </p>
+                      </>
+                    }
+                  />
+                  )
                 </p>
                 <br />
                 <p className="text-base mt-4 text-[var(--tx-2)] italic">
@@ -158,14 +182,144 @@ export default function Home() {
 
             {/* Horizontal divider */}
             <hr className="border-b border-[var(--ui-2)] w-full opacity-70" />
+            {/* Icon at top center */}
+            <div className="flex justify-center">
+              <Image
+                src="/icon.png"
+                alt="K·I Logo"
+                width={50}
+                height={50}
+                className="rounded-full animate-bob"
+                priority
+              />
+            </div>
 
-            {/* BUILDING K·I | ME */}
+            {/* BUILDING K·I */}
             <div className="space-y-6">
-              <h1 className="text-3xl font-bold text-[var(--accent)] italic text-center">
-                ~ BUILDING K·I | ME ~
-              </h1>
+              <h2 className="text-3xl font-bold text-[var(--accent)] italic text-center">
+                and now?
+              </h2>
+
+              <h2 className="text-4xl font-bold text-[var(--accent-2)] italic text-center">
+                i am building ~ K·I ~
+              </h2>
+
+              <h3 className="text-3xl font-bold text-[var(--accent-2)] italic text-center">
+                · an AI journal for the Self ·
+              </h3>
+              <h3 className="text-3xl font-bold text-[var(--accent-2)] italic text-center">
+                ~ making LOVE a way of life ~
+              </h3>
+
+              <p className="text-sm italic text-[var(--tx-2)] text-center">
+                [NOW] {"{"}mind setting ~ LOVE{"}"}
+              </p>
+              <h2 className="text-3xl font-bold text-[var(--accent)] italic text-center">
+                building ~ Self ~
+              </h2>
+
+              <p className="text-sm italic text-[var(--tx-2)] text-center">
+                [may 2023] {"{"}mindset ~ i am going to become the best version
+                of myself{"}"}
+              </p>
+
+              {/* Two-column layout: text left, video right */}
+              <div className="flex flex-col md:flex-row gap-6 md:gap-8 items-center md:items-start py-6">
+                {/* Left column - Placeholder text */}
+                <div className="flex-1 space-y-4">
+                  <h4 className="text-xl font-semibold text-[var(--accent-2)]">
+                    The Journey of Becoming
+                  </h4>
+                  <p className="text-base leading-relaxed">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                    ullamco laboris.
+                  </p>
+                  <p className="text-base leading-relaxed">
+                    Duis aute irure dolor in reprehenderit in voluptate velit
+                    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+                    occaecat cupidatat non proident.
+                  </p>
+                  <p className="text-base leading-relaxed">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                    ullamco laboris.
+                  </p>
+                  <p className="text-base leading-relaxed">
+                    Duis aute irure dolor in reprehenderit in voluptate velit
+                    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+                    occaecat cupidatat non proident.
+                  </p>
+                  <p className="text-base leading-relaxed">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                    ullamco laboris.
+                  </p>
+                  <p className="text-base leading-relaxed">
+                    Duis aute irure dolor in reprehenderit in voluptate velit
+                    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+                    occaecat cupidatat non proident.
+                  </p>
+                  <p className="text-base leading-relaxed">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                    ullamco laboris.
+                  </p>
+                  <p className="text-base leading-relaxed">
+                    Duis aute irure dolor in reprehenderit in voluptate velit
+                    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+                    occaecat cupidatat non proident.
+                  </p>
+                  <p className="text-base leading-relaxed">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                    ullamco laboris.
+                  </p>
+                  <p className="text-base leading-relaxed">
+                    Duis aute irure dolor in reprehenderit in voluptate velit
+                    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+                    occaecat cupidatat non proident.
+                  </p>
+                  <p className="text-base leading-relaxed">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                    ullamco laboris.
+                  </p>
+                </div>
+
+                {/* Right column - Video */}
+                <div className="flex-1 w-full flex flex-col items-center justify-center rounded-lg p-4 md:sticky md:top-[15vh] md:self-start">
+                  <video
+                    className="max-w-full max-h-[70vh] rounded-lg shadow-lg"
+                    controls
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                  >
+                    <source
+                      src="/story/media/videos/journey-of-becoming.MOV"
+                      type="video/mp4"
+                    />
+                    Your browser does not support the video tag.
+                  </video>
+                  <p className="text-sm italic text-[var(--tx-2)] mt-3">
+                    my mind map [3 years in 3 minutes]
+                  </p>
+                </div>
+              </div>
+
               <br />
             </div>
+
+            {/* Horizontal divider */}
+            <hr className="border-b border-[var(--ui-2)] w-full opacity-70" />
 
             {/* Demo Section */}
             {/* <div className="space-y-4">

@@ -214,14 +214,6 @@ export default function Home() {
               <p className="text-sm italic text-[var(--tx-2)] text-center">
                 [NOW] {"{"}mind setting ~ LOVE{"}"}
               </p>
-              <h2 className="text-3xl font-bold text-[var(--accent)] italic text-center">
-                building ~ Self ~
-              </h2>
-
-              <p className="text-sm italic text-[var(--tx-2)] text-center">
-                [may 2023] {"{"}mindset ~ i am going to become the best version
-                of myself{"}"}
-              </p>
 
               <br />
             </div>

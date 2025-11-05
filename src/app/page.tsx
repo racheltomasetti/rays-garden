@@ -557,6 +557,21 @@ From Old English 'nu' meaning `now, at present,` from Proto-Germanic '* QWZS  QW
                 <p className="text-base leading-relaxed font-semibold">
                   everything. every single day.
                 </p>
+                {/* Video showcase */}
+                <div className="flex flex-col items-center py-6">
+                  <div className="w-full max-w-[200px] aspect-[9/16] rounded-lg overflow-hidden shadow-lg">
+                    <iframe
+                      className="w-full h-full"
+                      src="https://www.youtube.com/embed/3EUnAy8VjAA?autoplay=1&mute=1&loop=1&playlist=3EUnAy8VjAA&controls=0"
+                      title="Building Me"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    />
+                  </div>
+                  <p className="text-sm italic text-[var(--tx-2)] mt-3 text-center">
+                    [august 27, 2022 - november 3, 2025]
+                  </p>
+                </div>
                 <p className="text-base leading-relaxed">
                   three years of learning, growing, building, breaking. rewiring
                   habits one day at a time. running until my body found a love
@@ -566,7 +581,8 @@ From Old English 'nu' meaning `now, at present,` from Proto-Germanic '* QWZS  QW
                   but a tool for understanding myself. building Self-belief
                   brick by brick when no one else could see what i was creating.
                 </p>
-                <p className="text-base leading-relaxed text-[var(--tx-2)]">
+
+                <p className="text-base leading-relaxed text-[var(--tx)]">
                   struggling to start. feeling stuck, lost, confused. being
                   misunderstood by the people closest to me. questioning
                   everything. doubting myself.

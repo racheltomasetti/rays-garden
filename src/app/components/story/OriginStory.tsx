@@ -189,6 +189,59 @@ export default function OriginStory() {
           <p className="text-base leading-relaxed font-semibold text-[var(--accent-2)]">
             that&apos;s when everything fell into place.
           </p>
+          <div className="text-center space-y-2 py-6">
+            <p className="text-base text-[var(--tx)]">
+              it may have taken a long time,
+            </p>
+            <p className="text-base text-[var(--tx)]">
+              but in the end it did not matter.
+            </p>
+            <p className="text-base text-[var(--tx)]">
+              after much healing through
+            </p>
+            <p className="text-base text-[var(--tx)]">
+              <strong>self-observation</strong> she now had
+            </p>
+            <p className="text-base text-[var(--tx)]">
+              <em>strength</em>, she now had <em>courage</em>,
+            </p>
+            <p className="text-base text-[var(--tx)]">
+              and the <em>wisdom</em> to wield her new
+            </p>
+            <p className="text-base text-[var(--tx)]">
+              magic with virtue.{" "}
+              <span className="text-[var(--accent)] italic">no longer did</span>
+            </p>
+            <p className="text-base text-[var(--accent)] italic">
+              she run from her pain or her
+            </p>
+            <p className="text-base text-[var(--accent)] italic">
+              troubles, no longer did she allow
+            </p>
+            <p className="text-base text-[var(--accent)]">
+              delusions to capture her mind, no
+            </p>
+            <p className="text-base text-[var(--accent)] italic ">
+              longer did she doubt that{" "}
+              <span className="text-[var(--accent-2)] font-bold">
+                the greatest
+              </span>
+            </p>
+            <p className="text-base text-[var(--accent-2)] font-bold italic">
+              healer she has ever met is her own
+            </p>
+            <p className="text-base text-[var(--accent-2)] font-bold italic">
+              unconditional love.
+            </p>
+            <br />
+            <p className="text-base italic mt-4 text-[var(--accent-2)] font-bold">
+              (you are a healer)
+            </p>
+            <br />
+            <p className="text-base mt-4 text-[var(--tx-2)] italic">
+              [yung pueblo ~ inward]
+            </p>
+          </div>
 
           {/* the time is now */}
           <div className="py-6">

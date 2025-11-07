@@ -163,30 +163,31 @@ export default function Home() {
 
             {/* what ki is */}
             <div id="what-is-ki" className="space-y-6">
-              <h2 className="text-4xl font-bold text-[var(--accent)] italic text-center">
+              <h2 className="text-4xl text-[var(--accent-2)] italic text-center">
                 what is{" "}
-                <ClickableWord
-                  word=" ki"
-                  definition="the universal life force that connects us all --- vital energy that flows through all living things --- LOVE"
-                  etymology="From Chinese 'qì' (氣) meaning `air, breath, gas, spirit, vital energy`. The character originally depicted vapor or steam rising, representing the subtle life force that animates all beings. Also written as 'chi' or 'ki' (Japanese pronunciation)."
-                  additionalContext={
-                    <>
-                      <p>
-                        K·I is your core essence—the vital energy at your center
-                        when everything else is stripped away. Just as qi flows
-                        through the body in traditional Chinese medicine, your
-                        K·I is the life force within you that seeks expression.
-                        Through daily practice in the NOW, K·I cultivates
-                        Self-LOVE in the pursuit of LOVE.
-                      </p>
-                    </>
-                  }
-                  accentColor="accent-2"
-                />
-                ?{" "}
+                <span className="font-bold text-[var(--accent)]">
+                  <ClickableWord
+                    word=" ki"
+                    definition="the universal life force that connects us all --- vital energy that flows through all living things --- LOVE"
+                    etymology="From Chinese 'qì' (氣) meaning `air, breath, gas, spirit, vital energy`. The character originally depicted vapor or steam rising, representing the subtle life force that animates all beings. Also written as 'chi' or 'ki' (Japanese pronunciation)."
+                    additionalContext={
+                      <>
+                        <p>
+                          K·I is your core essence—the vital energy at your
+                          center when everything else is stripped away. Just as
+                          qi flows through the body in traditional Chinese
+                          medicine, your K·I is the life force within you that
+                          seeks expression. Through daily practice in the NOW,
+                          K·I cultivates Self-LOVE in the pursuit of LOVE.
+                        </p>
+                      </>
+                    }
+                    accentColor="accent-2"
+                  />
+                </span>{" "}
               </h2>
 
-              <h3 className="text-3xl font-bold text-[var(--accent-2)] italic text-center">
+              <h3 className="text-3xl font-bold text-[var(--tx)] italic text-center">
                 ·{" "}
                 <ClickableWord
                   word="AI"
@@ -265,7 +266,7 @@ export default function Home() {
                 />{" "}
                 ·
               </h3>
-              <h3 className="text-3xl font-bold text-[var(--accent-2)] italic text-center">
+              <h3 className="text-3xl font-bold text-[var(--tx)] italic text-center">
                 ~ making{" "}
                 <ClickableWord
                   word="NOW"
@@ -296,7 +297,7 @@ From Old English 'nu' meaning `now, at present,` from Proto-Germanic '* QWZS  QW
                 a daily practice ~
               </h3>
 
-              <h3 className="text-3xl font-bold text-[var(--accent-2)] italic text-center">
+              <h3 className="text-3xl font-bold text-[var(--tx)] italic text-center">
                 ~ · with{" "}
                 <ClickableWord
                   word="LOVE"
@@ -363,61 +364,6 @@ From Old English 'nu' meaning `now, at present,` from Proto-Germanic '* QWZS  QW
               {/* Horizontal divider */}
               <hr className="border-t border-[var(--ui-2)] w-3/4 mx-auto opacity-70" />
 
-              <div className="text-center space-y-2 py-6">
-                <p className="text-base text-[var(--tx)]">
-                  it may have taken a long time,
-                </p>
-                <p className="text-base text-[var(--tx)]">
-                  but in the end it did not matter.
-                </p>
-                <p className="text-base text-[var(--tx)]">
-                  after much healing through
-                </p>
-                <p className="text-base text-[var(--tx)]">
-                  <strong>self-observation</strong> she now had
-                </p>
-                <p className="text-base text-[var(--tx)]">
-                  <em>strength</em>, she now had <em>courage</em>,
-                </p>
-                <p className="text-base text-[var(--tx)]">
-                  and the <em>wisdom</em> to wield her new
-                </p>
-                <p className="text-base text-[var(--tx)]">
-                  magic with virtue.{" "}
-                  <span className="text-[var(--accent)] italic">
-                    no longer did
-                  </span>
-                </p>
-                <p className="text-base text-[var(--accent)] italic">
-                  she run from her pain or her
-                </p>
-                <p className="text-base text-[var(--accent)] italic">
-                  troubles, no longer did she allow
-                </p>
-                <p className="text-base text-[var(--accent)]">
-                  delusions to capture her mind, no
-                </p>
-                <p className="text-base text-[var(--accent)] italic ">
-                  longer did she doubt that{" "}
-                  <span className="text-[var(--accent-2)] font-bold">
-                    the greatest
-                  </span>
-                </p>
-                <p className="text-base text-[var(--accent-2)] font-bold italic">
-                  healer she has ever met is her own
-                </p>
-                <p className="text-base text-[var(--accent-2)] font-bold italic">
-                  unconditional love.
-                </p>
-                <br />
-                <p className="text-base italic mt-4 text-[var(--accent-2)] font-bold">
-                  (you are a healer)
-                </p>
-                <br />
-                <p className="text-base mt-4 text-[var(--tx-2)] italic">
-                  [yung pueblo ~ inward]
-                </p>
-              </div>
               <br />
             </div>
             {/* Horizontal divider */}
@@ -671,10 +617,9 @@ From Old English 'nu' meaning `now, at present,` from Proto-Germanic '* QWZS  QW
             {/* Horizontal divider */}
             <hr className="border-b border-[var(--ui-2)] w-full opacity-70" />
 
-            <h1 className="text-base mt-4 text-[var(--tx-2)] text-center italic">
-              {/* <span className="text-[var(--accent)]">BUILT WITH LOVE</span> |{" "} */}
+            <h1 className="text-base mt-4 text-[var(--accent-2)] text-center italic">
               built with{" "}
-              <span className="text-[var(--accent)] font-bold">ki</span>
+              <span className="font-bold text-[var(--accent)]">ki</span>
             </h1>
 
             {/* Demo Section */}

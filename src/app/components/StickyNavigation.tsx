@@ -31,7 +31,7 @@ export default function StickyNavigation() {
               onClick={() => scrollToSection("what-is-ki")}
               className="text-xs md:text-base text-[var(--tx-2)] hover:text-[var(--accent)] transition-colors duration-200 font-medium"
             >
-              what is ki?
+              what is ki
             </button>
             <button
               onClick={() => scrollToSection("how-it-works")}

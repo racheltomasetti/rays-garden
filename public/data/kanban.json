@@ -1,16 +1,28 @@
 {
   "projects": {
-    "ki": {
+    "builder-ki": {
       "name": "builder-ki",
       "colorClass": "accent",
-      "githubLink": "https://github.com/racheltomasetti/builder-ki",
-      "projectDescription": "where ki is being built"
+      "linkUrl": "https://github.com/racheltomasetti/builder-ki",
+      "projectDescription": "where Ki is being explored & built"
     },
     "website": {
       "name": "my-digital-garden",
       "colorClass": "accent-2",
-      "githubLink": "https://github.com/racheltomasetti/my-digital-garden",
-      "projectDescription": "where ki is being shared"
+      "linkUrl": "https://github.com/racheltomasetti/my-digital-garden",
+      "projectDescription": "where Ki is being shared"
+    },
+    "ray-Ki": {
+      "name": "ray's Ki",
+      "colorClass": "accent-3",
+      "linkUrl": "https://www.racheltomasetti.com/",
+      "projectDescription": "using Ki to build my digital garden"
+    },
+    "Ki": {
+      "name": "Ki",
+      "colorClass": "accent-4",
+      "linkUrl": "",
+      "projectDescription": "Ki for everyone"
     }
   },
   "cards": [
@@ -20,7 +32,7 @@
       "githubLink": "https://github.com/racheltomasetti/builder-ki",
       "description": "Implement ability for user to customize the agent prompt for the ki thinking partner.",
       "processNotes": "",
-      "project": "ki",
+      "project": "builder-ki",
       "status": "done",
       "dateCreated": "2025-11-09T10:30:00",
       "dateCompleted": "2025-11-09T12:15:00"
@@ -38,46 +50,101 @@
     },
     {
       "id": "3",
-      "title": "[ ] oura integration",
-      "githubLink": "https://github.com/racheltomasetti/builder-ki",
-      "description": "Integrate Oura Ring data into the ki AI. Allow users to view their sleep, activity, and readiness metrics in the journal.",
-      "processNotes": "Use the Oura API to fetch data and display it in the journal.",
-      "project": "ki",
+      "title": "[ ] integrate oura mcp server",
+      "linkUrl": "https://github.com/racheltomasetti/builder-ki",
+      "description": "integrate oura mcp into Ki, providing agents and system with richer physiological context",
+      "processNotes": "",
+      "project": "builder-ki",
       "status": "todo",
-      "dateCreated": "2025-11-05T12:55:00",
+      "dateCreated": "2025-11-18T13:04:00",
       "dateCompleted": null
     },
     {
       "id": "4",
-      "title": "[ ] timer | calendar system",
-      "githubLink": "https://github.com/racheltomasetti/builder-ki",
-      "description": "Create a timer and calendar system for the ki ai. Allow users to set timers for their daily activities and view them in a calendar. Timer provides points of context for what the user is doing as they capture voice notes.",
-      "processNotes": "Create a timer component in the mobile app. Create calendar component in the web app.",
-      "project": "ki",
-      "status": "doing",
+      "title": "[x] timer | calendar system",
+      "linkUrl": "https://github.com/racheltomasetti/builder-ki",
+      "description": "a timer system that providescontext for what the user is doing as they capture voice notes",
+      "processNotes": "Created a timer component in the mobile app where the user can create tasks for the day. Attached to these tasks is a timer that when they start, tracks the duration of the task. Completed tasks form flow/activity blocks on the user's calendar. Created a calendar component in the web app that displays the user's timer sessions as blocks, along side their captures (voice, media)",
+      "project": "builder-ki",
+      "status": "done",
       "dateCreated": "2025-11-07T18:45:00",
-      "dateCompleted": null
+      "dateCompleted": "2025-11-15T15:45:00"
     },
     {
       "id": "5",
-      "title": "what ki is section",
-      "githubLink": "https://github.com/racheltomasetti/my-digital-garden",
-      "description": "what ai and Self mean to me, founding principles: {mindset is foundation, importance of present moment, love as a way of life}",
-      "processNotes": "",
-      "project": "website",
-      "status": "todo",
-      "dateCreated": "2025-11-09T15:47:00",
+      "title": "MIYAGI ~ YOUR MIND ~",
+      "linkUrl": "racheltomasetti.com",
+      "description": "BUILDING a comprehensive guide that spans the past 3 years, how to intentionally build your mind, fostering unconditional belief in Self. a HOW-TO guide on how to cultivate your mind garden. Based on my own journey, everything I have learned over these years.",
+      "processNotes": "i have been trying and trying to create this. now using Ki to build it out. a work in progress",
+      "project": "ray-Ki",
+      "status": "doing",
+      "dateCreated": "2025-10-26T01:05:00",
       "dateCompleted": null
     },
     {
       "id": "6",
-      "title": "how ki works section",
-      "githubLink": "https://github.com/racheltomasetti/my-digital-garden",
-      "description": "how ki works, how it is being built, how it can be used, how it integrates into the user's life",
+      "title": "build out site for launch",
+      "linkUrl": "https://github.com/racheltomasetti/my-digital-garden",
+      "description": "build out site with all the sections and pages",
       "processNotes": "",
       "project": "website",
-      "status": "todo",
+      "status": "doing",
       "dateCreated": "2025-11-09T16:00:00",
+      "dateCompleted": null
+    },
+     {
+      "id": "7",
+      "title": "[ ] create demo for launch",
+      "linkUrl": "https://github.com/racheltomasetti/my-digital-garden",
+      "description": "Ki public demo 1",
+      "processNotes": "",
+      "project": "website",
+      "status": "doing",
+      "dateCreated": "2025-11-10T11:44:00",
+      "dateCompleted": null
+    },
+    {
+      "id": "8",
+      "title": "THE ~ ULTIMATE ~ CYCLE GUIDE",
+      "linkUrl": "racheltomasetti.com",
+      "description": "BUILDING a comprehensive guide on how to navigate women's health, understand what is happening in your body, for you are the ceo of your health. your cycle is your superpower.",
+      "processNotes": "",
+      "project": "ray-Ki",
+      "status": "doing",
+      "dateCreated": "2023-06-13T03:05:00",
+      "dateCompleted": null
+    },
+    {
+      "id": "9",
+      "title": "~ THE BUILDER'S BINDER ~",
+      "linkUrl": "racheltomasetti.com",
+      "description": "BUILDING a how-to guide with what i have learned over the years with technology, building, ai. actionable for those curious to create with AI",
+      "processNotes": "",
+      "project": "ray-Ki",
+      "status": "doing",
+      "dateCreated": "2025-09-21T13:04:00",
+      "dateCompleted": null
+    },
+    {
+      "id": "10",
+      "title": "[ ] strava integration",
+      "linkUrl": "https://github.com/racheltomasetti/builder-ki",
+      "description": "integrate strava into Ki, adding the user's movement data to the system",
+      "processNotes": "",
+      "project": "builder-ki",
+      "status": "todo",
+      "dateCreated": "2025-11-18T14:06:00",
+      "dateCompleted": null
+    },
+    {
+      "id": "11",
+      "title": "Ki BETA",
+      "linkUrl": "",
+      "description": "release the first beta version of Ki",
+      "processNotes": "",
+      "project": "Ki",
+      "status": "todo",
+      "dateCreated": "2025-11-18T14:07:00",
       "dateCompleted": null
     }
   ]

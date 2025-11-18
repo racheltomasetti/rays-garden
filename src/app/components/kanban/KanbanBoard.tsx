@@ -60,7 +60,7 @@ export default function KanbanBoard() {
         {Object.entries(kanbanData.projects).map(([key, project]) => (
           <a
             key={key}
-            href={project.githubLink}
+            href={project.linkUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 hover:opacity-70 transition-opacity duration-200 cursor-pointer group relative"
@@ -88,7 +88,7 @@ export default function KanbanBoard() {
           projects={kanbanData.projects}
         />
         <KanbanColumn
-          title="doing"
+          title="NOW"
           cards={doingCards}
           projects={kanbanData.projects}
         />

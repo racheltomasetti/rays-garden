@@ -29,7 +29,13 @@ export default function KanbanCard({ card, project }: KanbanCardProps) {
   const borderColorStyle =
     colorClass === "accent"
       ? "border-[var(--accent)]"
-      : "border-[var(--accent-2)]";
+      : colorClass === "accent-2"
+      ? "border-[var(--accent-2)]"
+      : colorClass === "accent-3"
+      ? "border-[var(--accent-3)]"
+      : colorClass === "accent-4"
+      ? "border-[var(--accent-4)]"
+      : `border-[var(--${colorClass})]`;
 
   return (
     <div
@@ -60,7 +66,7 @@ export default function KanbanCard({ card, project }: KanbanCardProps) {
         Created at: {formatDateTime(card.dateCreated)}
       </div>
       {card.dateCompleted && (
-        <div className="text-[var(--accent-2)]">
+        <div className="text-green-700 italic">
           <span className="font-semibold">Completed at:</span>{" "}
           {formatDateTime(card.dateCompleted)}
         </div>

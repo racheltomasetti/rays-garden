@@ -1,10 +1,10 @@
 export interface KanbanCard {
   id: string;
   title: string;
-  githubLink: string;
+  linkUrl: string;
   description: string;
   processNotes: string;
-  project: "ki" | "website";
+  project: "builder-ki" | "website" | "ray-Ki" | "Ki";
   status: "todo" | "doing" | "done";
   dateCreated: string;
   dateCompleted: string | null;
@@ -13,7 +13,7 @@ export interface KanbanCard {
 export interface Project {
   name: string;
   colorClass: string;
-  githubLink: string;
+  linkUrl: string;
   projectDescription: string;
 }
 

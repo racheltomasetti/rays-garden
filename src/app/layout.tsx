@@ -4,7 +4,7 @@ import { ThemeProvider } from "./contexts/ThemeContext";
 import { perpetua } from "./fonts";
 
 export const metadata: Metadata = {
-  title: "this is ki",
+  title: "this is Ki",
   description: "mind garden",
   viewport: {
     width: "device-width",

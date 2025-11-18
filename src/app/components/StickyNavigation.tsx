@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import BobbingKi from "./ki/BobbingKi";
 
 export default function StickyNavigation() {
   const [activeSection, setActiveSection] = useState<string>("");
@@ -58,38 +59,31 @@ export default function StickyNavigation() {
   return (
     <nav className="sticky top-0 z-50 w-full bg-[var(--bg)] border-b border-[var(--ui-2)] backdrop-blur-sm bg-opacity-95">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
-        <div className="flex items-center justify-between py-4">
-          {/* Logo on the left */}
-          <div className="flex justify-center">
-            <Image
-              src="/icon.png"
-              alt="ki logo"
-              width={50}
-              height={50}
-              className="rounded-full animate-bob"
-              priority
-            />
+        <div className="flex flex-col items-center justify-center py-4 gap-3">
+          {/* Logo in the center */}
+          <div>
+            <BobbingKi />
           </div>
 
-          {/* Navigation links on the right */}
+          {/* Navigation links centered below */}
           <div className="flex items-center gap-4 md:gap-8">
             <button
               onClick={() => scrollToSection("what-is-ki")}
               className={getButtonClassName("what-is-ki")}
             >
-              what ki is
+              what Ki is
             </button>
             <button
               onClick={() => scrollToSection("how-it-works")}
               className={getButtonClassName("how-it-works")}
             >
-              how ki works
+              how Ki works
             </button>
             <button
               onClick={() => scrollToSection("about-the-builder")}
               className={getButtonClassName("about-the-builder")}
             >
-              building ki
+              building Ki
             </button>
           </div>
         </div>

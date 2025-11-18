@@ -18,6 +18,8 @@ html.dark {
   /* --accent: #e35336; */
   --accent: #af3029;
   --accent-2: #24837b;
+  --accent-3: #d0a215;
+  --accent-4: #a02f6f;
 
   /* Color palette - 600 series (darker shades) for dark theme */
   --re: #af3029; /* Red */
@@ -198,7 +200,8 @@ audio.audio-player::-internal-media-controls-overflow-button {
 
 html.light audio.audio-player::-webkit-media-controls-play-button,
 html.light audio.audio-player::-webkit-media-controls-mute-button,
-html.light audio.audio-player::-webkit-media-controls-toggle-closed-captions-button,
+html.light
+  audio.audio-player::-webkit-media-controls-toggle-closed-captions-button,
 html.light audio.audio-player::-webkit-media-controls-fullscreen-button,
 html.light audio.audio-player::-internal-media-controls-overflow-button {
   filter: none !important;

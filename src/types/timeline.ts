@@ -25,7 +25,7 @@ export type MediaItem = {
 export type Document = {
   id: string;
   title: string;
-  content: any;
+  content: object | null;
   created_at: string;
   updated_at: string;
   is_public: boolean;

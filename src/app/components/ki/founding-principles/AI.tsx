@@ -44,7 +44,7 @@ export default function AI() {
               it recognizes that mind and body are one.
             </span>{" "}
             your hormonal cycles, your energy levels, your emotional
-            states—these aren't obstacles to productivity. they are
+            states—these aren&apos;t obstacles to productivity. they are
             intelligence. Ki meets you where your body is, adapting to support
             your natural rhythms.
           </p>

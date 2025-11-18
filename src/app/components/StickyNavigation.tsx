@@ -49,7 +49,7 @@ export default function StickyNavigation() {
 
   const getButtonClassName = (sectionId: string) => {
     const isActive = activeSection === sectionId;
-    return `text-sm md:text-lg lg:text-2xl transition-colors duration-200 whitespace-nowrap ${
+    return `text-xl md:text-2xl lg:text-3xl transition-colors duration-200 whitespace-nowrap ${
       isActive
         ? "text-[var(--accent)] font-bold"
         : "text-[var(--tx-2)] hover:text-[var(--accent)] font-medium hover:font-bold"
@@ -71,7 +71,7 @@ export default function StickyNavigation() {
               onClick={() => scrollToSection("what-is-ki")}
               className={getButtonClassName("what-is-ki")}
             >
-              what is <span className="font-bold">Ki</span>?
+              what is Ki
             </button>
             <button
               onClick={() => scrollToSection("how-it-works")}

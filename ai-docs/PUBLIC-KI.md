@@ -749,9 +749,9 @@ Maintain consistency with builder-ki:
 
 ## Part 7: Deployment Checklist
 
-- [ ] Environment variables configured
-- [ ] Supabase RLS policies enabled for public access
-- [ ] Types defined and shared
+- [x] Environment variables configured
+- [x] Supabase RLS policies enabled for public access
+- [x] Types defined and shared
 - [ ] Timeline component implemented
 - [ ] Modal component with navigation
 - [ ] Responsive design tested

@@ -60,9 +60,9 @@ export default function Home() {
             {/* what Ki is */}
             <div id="what-is-ki" className="space-y-12">
               {/* Header */}
-              <h2 className="text-6xl font-bold text-[var(--accent)] italic text-center">
+              {/* <h2 className="text-6xl font-bold text-[var(--accent)] italic text-center">
                 what is <span className="font-bold">Ki</span>?
-              </h2>
+              </h2> */}
 
               {/* Etymology - Origin of ki */}
               <div className="max-w-3xl mx-auto space-y-6">
@@ -113,9 +113,9 @@ export default function Home() {
             </div>
             {/* HOW Ki WORKS */}
             <div id="how-it-works" className="space-y-6">
-              <h2 className="text-6xl font-bold text-[var(--accent)] italic text-center">
+              {/* <h2 className="text-6xl font-bold text-[var(--accent)] italic text-center">
                 how Ki works
-              </h2>
+              </h2> */}
             </div>
             <div className="flex justify-center">
               <BobbingKi />
@@ -133,9 +133,9 @@ export default function Home() {
             {/* BUILDING Ki */}
             <div id="about-the-builder" className="space-y-6">
               <div className="space-y-6">
-                <p className="text-6xl leading-relaxed text-[var(--accent)] font-bold italic text-center max-w-2xl mx-auto mb-6">
+                {/* <p className="text-6xl leading-relaxed text-[var(--accent)] font-bold italic text-center max-w-2xl mx-auto mb-6">
                   building Ki
-                </p>
+                </p> */}
                 <div className="bg-[var(--bg-2)] rounded-lg p-6 md:p-8 shadow-sm">
                   <HorizontalLine />
                   <br />

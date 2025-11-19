@@ -139,7 +139,7 @@ export default function Timeline({ className = "" }: TimelineProps) {
     <div className={`w-full ${className}`}>
       {/* Header */}
       <div className="text-center mb-8">
-        <h2 className="text-4xl font-bold text-[var(--accent)] italic mb-4">
+        <h2 className="text-3xl text-[var(--accent)] italic mb-4">
           The Journey
         </h2>
         <p className="text-lg text-[var(--tx-2)] italic">

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { ThemeProvider } from "./contexts/ThemeContext";
-import { perpetua } from "./fonts";
+import { poppins } from "./fonts";
 
 export const metadata: Metadata = {
   title: "this is Ki",
@@ -33,7 +33,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${perpetua.className} antialiased`}>
+      <body className={`${poppins.className} antialiased`}>
         <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>

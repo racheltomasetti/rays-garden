@@ -47,9 +47,16 @@ export default function StickyNavigation() {
     }
   };
 
+  const scrollToBottom = () => {
+    window.scrollTo({
+      top: document.documentElement.scrollHeight,
+      behavior: "smooth",
+    });
+  };
+
   const getButtonClassName = (sectionId: string) => {
     const isActive = activeSection === sectionId;
-    return `text-xl md:text-2xl lg:text-3xl transition-colors duration-200 whitespace-nowrap ${
+    return `text-md md:text-lg lg:text-xl transition-colors duration-200 whitespace-nowrap ${
       isActive
         ? "text-[var(--accent)] font-bold"
         : "text-[var(--tx-2)] hover:text-[var(--accent)] font-medium hover:font-bold"
@@ -61,12 +68,12 @@ export default function StickyNavigation() {
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="flex flex-col items-center justify-center py-4 gap-3">
           {/* Logo in the center */}
-          <div>
+          <button onClick={scrollToBottom} className="cursor-pointer">
             <BobbingKi />
-          </div>
+          </button>
 
           {/* Navigation links centered below */}
-          <div className="flex items-center gap-4 md:gap-8">
+          <div className="flex items-center justify-center gap-6 md:gap-8">
             <button
               onClick={() => scrollToSection("what-is-ki")}
               className={getButtonClassName("what-is-ki")}

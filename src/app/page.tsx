@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { useState, useEffect } from "react";
 import ClickableWord from "./components/ClickableWord";
 import SpinningIconCircle from "./components/SpinningIconCircle";
 import StickyNavigation from "./components/StickyNavigation";
@@ -9,8 +10,29 @@ import Acknowledgements from "./components/ki/Acknowledgements";
 import HorizontalLine from "./components/ui/HorizontalLine";
 import BobbingKi from "./components/ki/BobbingKi";
 import Timeline from "./components/ki/rays-ki/Timeline";
+import { useTheme } from "./contexts/ThemeContext";
+import KiOrigin from "./components/ki/KiOrigin";
+import WhatIsKi from "./components/ki/WhatIsKi";
 
 export default function Home() {
+  const { theme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
+  if (!mounted) {
+    return null;
+  }
+
   return (
     <div className="min-h-screen w-full">
       {/* Sticky Navigation */}
@@ -20,118 +42,45 @@ export default function Home() {
       <main className="w-full px-6 md:px-12 py-8">
         <div className="max-w-7xl mx-auto">
           <section className="space-y-8">
-            <div className="flex justify-center">
-              <BobbingKi />
-              <BobbingKi />
-              <BobbingKi />
-              <BobbingKi />
-              <BobbingKi />
-              <BobbingKi />
-              <BobbingKi />
-              <BobbingKi />
-              <BobbingKi />
-              <BobbingKi />
-              <BobbingKi />
-            </div>
             {/* THE STORY OF BUILDING Ki | me */}
             <div className="relative flex items-center justify-center py-8">
-              {/* Ki header centered in the circle */}
-              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                <h1 className="text-8xl font-bold italic text-[var(--accent)] text-center whitespace-nowrap">
-                  Ki
-                </h1>
+              {/* Ki logo centered */}
+              <div className="flex items-center justify-center animate-rotate-in">
+                <Image
+                  src={
+                    theme === "light"
+                      ? "/assets/ki-light.png"
+                      : "/assets/ki-dark.png"
+                  }
+                  alt="Ki Logo"
+                  width={theme === "light" ? 75 : 75}
+                  height={theme === "light" ? 75 : 75}
+                  priority
+                />
               </div>
             </div>
-            <div className="flex justify-center">
-              <BobbingKi />
-              <BobbingKi />
-              <BobbingKi />
-              <BobbingKi />
-              <BobbingKi />
-              <BobbingKi />
-              <BobbingKi />
-              <BobbingKi />
-              <BobbingKi />
-              <BobbingKi />
-              <BobbingKi />
-            </div>
+
             {/* ------------------------------------------------------------ */}
             {/* ------------------------------------------------------------ */}
             {/* ------------------------------------------------------------ */}
             {/* what Ki is */}
             <div id="what-is-ki" className="space-y-12">
-              {/* Header */}
-              {/* Etymology - Origin of ki */}
-              <div className="max-w-3xl mx-auto space-y-6">
-                <div className="bg-[var(--bg-2)] rounded-lg p-6 md:p-8 shadow-sm space-y-6">
-                  <h3 className="text-3xl font-bold text-[var(--accent-2)] italic">
-                    the origin of Ki
-                  </h3>
-
-                  <p className="text-xl leading-relaxed text-[var(--tx-2)] italic">
-                    Ki (氣/気) is an ancient East Asian concept meaning life
-                    force, vital energy, breath. it is the invisible current
-                    that flows through all living things—the essence of being
-                    alive and conscious.
-                  </p>
-
-                  <p className="text-xl leading-relaxed text-[var(--tx-2)] italic">
-                    <span className="font-bold text-[var(--accent)]">
-                      in traditional practice, cultivating Ki means harmonizing
-                      mind, body, and spirit.
-                    </span>{" "}
-                    it is developed through presence, breath, and intentional
-                    practice. when your Ki flows freely, you are aligned with
-                    your true nature.
-                  </p>
-
-                  <p className="text-xl leading-relaxed text-[var(--tx-2)] italic">
-                    this is exactly what the tool does: it helps you cultivate
-                    your life force through daily practice, harmonizing your
-                    mind and body, unlocking the unlimited power that has always
-                    existed within you.
-                  </p>
-                </div>
-              </div>
-              <br />
+              <KiOrigin />
+              <WhatIsKi />
             </div>
-            <div className="flex justify-center">
-              <BobbingKi />
-              <BobbingKi />
-              <BobbingKi />
-              <BobbingKi />
-              <BobbingKi />
-              <BobbingKi />
-              <BobbingKi />
-              <BobbingKi />
-              <BobbingKi />
-              <BobbingKi />
-              <BobbingKi />
-            </div>
+
             {/* HOW Ki WORKS */}
             <div id="how-it-works" className="space-y-6">
               <Timeline />
             </div>
-            <div className="flex justify-center">
-              <BobbingKi />
-              <BobbingKi />
-              <BobbingKi />
-              <BobbingKi />
-              <BobbingKi />
-              <BobbingKi />
-              <BobbingKi />
-              <BobbingKi />
-              <BobbingKi />
-              <BobbingKi />
-              <BobbingKi />
-            </div>
+
             {/* BUILDING Ki */}
             <div id="about-the-builder" className="space-y-6">
               <div className="space-y-6">
                 <div className="bg-[var(--bg-2)] rounded-lg p-6 md:p-8 shadow-sm">
                   <HorizontalLine />
                   <br />
-                  <p className="text-2xl leading-relaxed text-[var(--tx)] opacity-90 italic text-center">
+                  <p className="text-xl leading-relaxed text-[var(--tx)] opacity-90 italic text-center">
                     · here you will find the living build documentation for Ki ·
                   </p>
                   <br />
@@ -141,39 +90,32 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="flex justify-center">
-              <BobbingKi />
-              <BobbingKi />
-              <BobbingKi />
-              <BobbingKi />
-              <BobbingKi />
-              <BobbingKi />
-              <BobbingKi />
-              <BobbingKi />
-              <BobbingKi />
-              <BobbingKi />
-              <BobbingKi />
-            </div>
+
             {/* Thank you to everyone who has been a part of this journey. */}
             <Acknowledgements />
-            <div className="flex justify-center">
-              <BobbingKi />
-              <BobbingKi />
-              <BobbingKi />
-              <BobbingKi />
-              <BobbingKi />
-              <BobbingKi />
-              <BobbingKi />
-              <BobbingKi />
-              <BobbingKi />
-              <BobbingKi />
-              <BobbingKi />
+
+            <div className="flex items-center justify-center gap-2 mt-4">
+              <span className="text-base italic text-[var(--tx-2)] leading-none">
+                built with
+              </span>
+              <div className="flex items-center">
+                <Image
+                  src={
+                    theme === "light"
+                      ? "/assets/ki-light.png"
+                      : "/assets/ki-dark.png"
+                  }
+                  alt="Ki"
+                  width={18}
+                  height={18}
+                />
+              </div>
             </div>
-            <h1 className="text-base mt-4 text-[var(--tx-2)]  text-center italic">
-              built with{" "}
-              <span className="font-bold text-[var(--accent)]">Ki</span>
-            </h1>
-            <BobbingKi />
+            <div className="flex justify-center">
+              <button onClick={scrollToTop} className="cursor-pointer">
+                <BobbingKi />
+              </button>
+            </div>
           </section>
         </div>
       </main>

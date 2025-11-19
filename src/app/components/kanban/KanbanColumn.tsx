@@ -18,7 +18,7 @@ export default function KanbanColumn({
     <div className="flex flex-col min-w-[280px] flex-1">
       {/* Column Header */}
       <div className="bg-[var(--ui)] rounded-t-lg p-4 border-b-2 border-[var(--ui-2)] shadow-sm">
-        <h3 className="text-3xl font-bold text-[var(--tx)] text-center">
+        <h3 className="text-2xl italic text-[var(--tx)] text-center">
           {title}
         </h3>
         <p className="text-xs text-[var(--tx-3)] text-center mt-1">

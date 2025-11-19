@@ -56,9 +56,7 @@ export default function KanbanCard({ card, project }: KanbanCardProps) {
     >
       {/* Card Header - Always Visible */}
       <div className="flex items-start justify-between gap-2">
-        <h3 className="text-2xl font-semibold text-[var(--tx)]">
-          {card.title}
-        </h3>
+        <h3 className="text-lg font-semibold text-[var(--tx)]">{card.title}</h3>
       </div>
       <br />
       {/* Dates */}

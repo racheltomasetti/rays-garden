@@ -44,7 +44,7 @@ export default function WhatIsKi() {
       </div>
       {/* The Goldilocks Zone */}
       <div className="bg-[var(--bg-2)] rounded-lg p-6 md:p-8 shadow-sm space-y-4 text-center">
-        <h3 className="text-2xl text-[var(--accent)] mb-6">
+        <h3 className="text-2xl text-[var(--accent)] mb-6 font-semibold">
           Finding the <span className="italic font-semibold">Sweet Spot</span>
         </h3>
         <p className="text-lg leading-relaxed text-[var(--tx)]">

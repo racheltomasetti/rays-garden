@@ -3,10 +3,13 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import BobbingKi from "./ki/BobbingKi";
 import { useModal } from "@/app/contexts/ModalContext";
+import { Info } from "lucide-react";
+import SiteNavModal from "./ki/SiteNavModal";
 
 export default function StickyNavigation() {
   const [activeSection, setActiveSection] = useState<string>("");
-  const { isModalOpen } = useModal();
+  const [isSiteNavModalOpen, setIsSiteNavModalOpen] = useState(false);
+  const { isModalOpen, setIsModalOpen } = useModal();
 
   useEffect(() => {
     const sections = ["what-is-ki", "how-it-works", "about-the-builder"];
@@ -65,16 +68,36 @@ export default function StickyNavigation() {
     }`;
   };
 
-  if (isModalOpen) return null;
+  const handleOpenSiteNavModal = () => {
+    setIsSiteNavModalOpen(true);
+    setIsModalOpen(true);
+  };
+
+  const handleCloseSiteNavModal = () => {
+    setIsSiteNavModalOpen(false);
+    setIsModalOpen(false);
+  };
+
+  if (isModalOpen && !isSiteNavModalOpen) return null;
 
   return (
-    <nav className="sticky top-0 z-50 w-full bg-[var(--bg)] border-b border-[var(--ui-2)] backdrop-blur-sm bg-opacity-95">
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
-        <div className="flex flex-col items-center justify-center py-4 gap-3">
-          {/* Logo in the center */}
-          <button onClick={scrollToBottom} className="cursor-pointer">
-            <BobbingKi />
-          </button>
+    <>
+      <nav className="sticky top-0 z-50 w-full bg-[var(--bg)] border-b border-[var(--ui-2)] backdrop-blur-sm bg-opacity-95">
+        <div className="max-w-7xl mx-auto px-6 md:px-12">
+          <div className="flex flex-col items-center justify-center py-4 gap-3 relative">
+            {/* Info icon in top right */}
+            <button
+              onClick={handleOpenSiteNavModal}
+              className="absolute top-4 right-0 p-2 rounded-lg hover:bg-[var(--ui)] transition-colors"
+              aria-label="Site navigation guide"
+            >
+              <Info className="w-5 h-5 text-[var(--tx-2)] hover:text-[var(--accent)] transition-colors" />
+            </button>
+
+            {/* Logo in the center */}
+            <button onClick={scrollToBottom} className="cursor-pointer">
+              <BobbingKi />
+            </button>
 
           {/* Navigation links centered below */}
           <div className="flex items-center justify-center gap-6 md:gap-8">
@@ -100,5 +123,7 @@ export default function StickyNavigation() {
         </div>
       </div>
     </nav>
+    <SiteNavModal isOpen={isSiteNavModalOpen} onClose={handleCloseSiteNavModal} />
+    </>
   );
 }

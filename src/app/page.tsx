@@ -70,6 +70,7 @@ export default function Home() {
               <KiOrigin />
               <WhatIsKi />
             </div>
+            <BobbingKi />
 
             {/* HOW Ki WORKS */}
             <div id="how-it-works" className="space-y-6">

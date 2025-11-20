@@ -1,13 +1,11 @@
 "use client";
 
-interface KiDemoProps {}
-
-export default function KiDemo({}: KiDemoProps) {
+export default function KiDemo() {
   return (
     <div className="space-y-8">
       <div className="bg-[var(--bg-2)] rounded-lg p-6 md:p-8 shadow-sm">
         <h2 className="text-3xl font-semibold text-[var(--accent)] mb-6 text-center">
-          Ki in Action
+          Ki <span className="italic">in Action</span>
         </h2>
 
         <div className="space-y-8">

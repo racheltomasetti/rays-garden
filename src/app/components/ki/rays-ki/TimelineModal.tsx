@@ -164,31 +164,20 @@ export default function TimelineModal({ item, onClose }: TimelineModalProps) {
         {/* Header */}
         <div className="flex items-start justify-between p-6 border-b border-[var(--ui-2)]">
           <div className="flex-1">
-            <div className="flex items-center gap-2 mb-2">
-              <span
-                className="text-sm uppercase tracking-wide font-semibold italic"
-                style={{ color: getTypeColor(item.type) }}
-              >
-                {item.type}
-              </span>
-            </div>
-            <p className="text-sm text-[var(--tx-2)] italic">
+            <p
+              className="text-sm text-[var(--tx-2)] italic text-center"
+              style={{ color: getTypeColor(item.type) }}
+            >
               {formatTimestamp(item.timestamp)}
             </p>
           </div>
-          <button
-            onClick={onClose}
-            className="p-2 rounded-lg hover:bg-[var(--ui)] transition-colors"
-          >
-            <X className="w-5 h-5 text-[var(--tx-2)]" />
-          </button>
         </div>
 
         {/* Content */}
         <div className="p-6">{renderContent()}</div>
 
         {/* Footer */}
-        <div className="flex items-center justify-end p-6 border-t border-[var(--ui-2)]">
+        <div className="flex items-center justify-center p-6 border-t border-[var(--ui-2)]">
           <button
             onClick={onClose}
             className="px-4 py-2 rounded-lg bg-[var(--bg-2)] hover:bg-[var(--ui)] text-[var(--tx)] transition-colors italic"

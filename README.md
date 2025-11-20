@@ -1,5 +1,5 @@
 # CREATE
 
-_the mindset that got me to finally start building?_
+_the mindset that got me to finally start building:_
 
-### don't think, build.
+#### don't think, build.

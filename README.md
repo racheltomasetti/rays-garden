@@ -1,6 +1,6 @@
 # CREATE
 
-_we are meant to create._
+_we were meant to create._
 
 ---
 

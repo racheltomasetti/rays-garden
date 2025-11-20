@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useState, useEffect } from "react";
 import ClickableWord from "./components/ClickableWord";
 import SpinningIconCircle from "./components/SpinningIconCircle";
@@ -17,6 +18,8 @@ import Waitlist from "./components/ki/Waitlist";
 import KiDemo from "./components/ki/KiDemo";
 import Socials from "./components/ki/Socials";
 import UnlockKi from "./components/ki/UnlockKi";
+
+const JOTFORM_URL = "https://form.jotform.com/253228041809152";
 
 export default function Home() {
   const { theme } = useTheme();
@@ -112,6 +115,20 @@ export default function Home() {
 
             {/* Thank you to everyone who has been a part of this journey. */}
             <Acknowledgements />
+            <HorizontalLine />
+
+            {/* join the waitlist button */}
+            <div className="flex justify-center">
+              <Link
+                href={JOTFORM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block px-6 py-3 rounded-lg bg-[var(--accent)] hover:bg-[var(--accent)]/90 text-white font-semibold transition-colors italic"
+              >
+                Join the Waitlist
+              </Link>
+            </div>
+            <HorizontalLine />
 
             <div className="flex items-center justify-center gap-2 mt-4">
               <span className="text-base italic text-[var(--tx-2)] leading-none">

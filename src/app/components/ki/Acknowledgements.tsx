@@ -12,11 +12,11 @@ export default function Acknowledgements() {
           <br />
           <div className="max-w-3xl mx-auto space-y-6">
             <p className="text-base leading-relaxed italic text-[var(--tx)]">
-              i am beyond grateful for all who have helped me become the person
-              i am today.
+              I am beyond grateful for all who have helped me become the person
+              I am today.
             </p>
             <p className="text-base leading-relaxed italic text-[var(--tx)]">
-              i would like to take a moment to thank you all:
+              I would like to take a moment to thank you all:
             </p>
             <div className="bg-[var(--ui)] rounded-lg p-6 md:p-8 shadow-sm space-y-6 max-w-2xl mx-auto">
               <div className="space-y-2">
@@ -228,12 +228,12 @@ export default function Acknowledgements() {
                 </div> */}
                 <br />
                 <p className="text-base leading-relaxed italic text-[var(--tx)]">
-                  i would not be the person i am today without you.
+                  I would not be the person I am today without you.
                 </p>
 
                 <br />
                 <p className="text-base leading-relaxed font-semibold text-[var(--accent)]">
-                  you are my hero—this is for you.
+                  You are my hero—this is for you.
                 </p>
               </div>
             </div>

@@ -15,6 +15,7 @@ import KiOrigin from "./components/ki/KiOrigin";
 import WhatIsKi from "./components/ki/WhatIsKi";
 import Waitlist from "./components/ki/Waitlist";
 import KiDemo from "./components/ki/KiDemo";
+import Socials from "./components/ki/Socials";
 
 export default function Home() {
   const { theme } = useTheme();
@@ -83,18 +84,22 @@ export default function Home() {
             <div id="about-the-builder" className="space-y-6">
               <div className="space-y-6">
                 <div className="bg-[var(--bg-2)] rounded-lg p-6 md:p-8 shadow-sm">
-                  <HorizontalLine />
-                  <br />
-                  <p className="text-2xl leading-relaxed text-[var(--tx)] opacity-90 italic text-center">
+                  <p className="text-3xl leading-relaxed text-[var(--accent-2)] opacity-90 font-semibold text-center italic">
                     Join us in building
                   </p>
-                  <p className="text-4xl leading-relaxed text-[var(--tx)] opacity-90 font-semibold text-center">
-                    ~ Ki ~
+
+                  <p className="text-6xl leading-relaxed text-[var(--accent-2)] opacity-90 text-center font-bold">
+                    ~ • Ki • ~
                   </p>
+                  <br />
+                  <Socials />
+                  <br />
                   <br />
                   <HorizontalLine />
                   <br />
                   <KanbanBoard />
+                  <br />
+                  <HorizontalLine />
                   <br />
                 </div>
               </div>

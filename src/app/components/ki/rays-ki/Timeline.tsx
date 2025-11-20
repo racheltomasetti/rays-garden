@@ -8,6 +8,8 @@ import {
   formatTimelineDate,
 } from "@/lib/api/publicTimeline";
 import TimelineModal from "./TimelineModal";
+import BobbingKi from "../BobbingKi";
+import HorizontalLine from "@/app/components/ui/HorizontalLine";
 
 type TimelineProps = {
   className?: string;
@@ -61,20 +63,10 @@ export default function Timeline({ className = "" }: TimelineProps) {
     setVisibleTypes(newVisible);
   };
 
-  // Handle modal navigation
-  const handleNavigation = (direction: "prev" | "next") => {
-    if (!selectedItem) return;
-    const currentIndex = filteredItems.findIndex(
-      (item) => item.id === selectedItem.id
-    );
-
-    if (direction === "prev" && currentIndex > 0) {
-      setSelectedItem(filteredItems[currentIndex - 1]);
-    } else if (
-      direction === "next" &&
-      currentIndex < filteredItems.length - 1
-    ) {
-      setSelectedItem(filteredItems[currentIndex + 1]);
+  // Handle clicking on document items only
+  const handleItemClick = (item: TimelineItem) => {
+    if (item.type === "document") {
+      setSelectedItem(item);
     }
   };
 
@@ -137,15 +129,21 @@ export default function Timeline({ className = "" }: TimelineProps) {
 
   return (
     <div className={`w-full ${className}`}>
-      {/* Header */}
       <div className="text-center mb-8">
+        <HorizontalLine />
+        <br />
+        <BobbingKi />
+        <br />
         <h2 className="text-3xl text-[var(--accent)] italic mb-4">
-          The Journey
+          The Story of Ki
         </h2>
-        <p className="text-lg text-[var(--tx-2)] italic">
-          Every capture, every moment, telling the story of Ki
-        </p>
+        <p className="text-2xl text-[var(--tx-2)] italic">is written with</p>
+        <br />
+        <p className="text-2xl text-[var(--tx)] italic mb-3">every capture.</p>
+        <p className="text-2xl text-[var(--tx)] italic mb-3">every moment.</p>
+        <p className="text-2xl text-[var(--tx)] italic">every day.</p>
       </div>
+      <br />
 
       {/* Filter Controls */}
       <div className="flex justify-center gap-3 mb-4">
@@ -241,11 +239,15 @@ export default function Timeline({ className = "" }: TimelineProps) {
                         cy={pos.y}
                         r={isHovered ? "10" : "6"}
                         fill={color}
-                        className="cursor-pointer transition-all"
+                        className={
+                          item.type === "document"
+                            ? "cursor-pointer transition-all"
+                            : "transition-all"
+                        }
                         style={{
                           filter: "drop-shadow(0 4px 4px rgba(0,0,0,0.2))",
                         }}
-                        onClick={() => setSelectedItem(item)}
+                        onClick={() => handleItemClick(item)}
                         onMouseEnter={() => setHoveredItem(item.id)}
                         onMouseLeave={() => setHoveredItem(null)}
                       />
@@ -380,12 +382,18 @@ export default function Timeline({ className = "" }: TimelineProps) {
                           cy={scaledY}
                           r={isHovered ? "6" : "4"}
                           fill={color}
-                          className="cursor-pointer transition-all"
+                          className={
+                            item.type === "document"
+                              ? "cursor-pointer transition-all"
+                              : "transition-all"
+                          }
                           style={{
                             filter: "drop-shadow(0 1px 2px rgba(0,0,0,0.2))",
                           }}
-                          onClick={() => setSelectedItem(item)}
-                          onTouchStart={() => setSelectedItem(item)}
+                          onClick={() => handleItemClick(item)}
+                          onTouchStart={() =>
+                            item.type === "document" && handleItemClick(item)
+                          }
                         />
                       </g>
                     );
@@ -417,6 +425,11 @@ export default function Timeline({ className = "" }: TimelineProps) {
                 )}
               </div>
             </div>
+            <br />
+            <br />
+            <BobbingKi />
+            <br />
+            <HorizontalLine />
           </div>
         </>
       )}
@@ -424,9 +437,7 @@ export default function Timeline({ className = "" }: TimelineProps) {
       {/* Timeline Modal */}
       <TimelineModal
         item={selectedItem}
-        allItems={filteredItems}
         onClose={() => setSelectedItem(null)}
-        onNavigate={handleNavigation}
       />
     </div>
   );

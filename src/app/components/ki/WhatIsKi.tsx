@@ -15,14 +15,12 @@ export default function WhatIsKi() {
           <span className="font-semibold">AI toolkit</span>{" "}
           <span className="italic text-[var(--tx)]">for the</span>
         </h3>
-        <h3 className="text-4xl  italic text-[var(--accent-2)]">
-          ~ • Self • ~
-        </h3>
+        <h3 className="text-4xl  italic text-[var(--accent-2)]">~ Self ~</h3>
         <br />
         <br />
-        <p className="text-xl font-semibold leading-relaxed text-[var(--tx)] italic">
-          Explore <span className="text-[var(--accent)] italic">|</span> Create{" "}
-          <span className="text-[var(--accent)] italic">|</span> Connect
+        <p className="text-xl font-semibold leading-relaxed text-[var(--tx)]">
+          Explore <span className="text-[var(--accent)]">|</span> Create{" "}
+          <span className="text-[var(--accent)] ">|</span> Connect
         </p>
         {/* Flow of Knowledge */}
         <div className="py-6 flex flex-col items-center justify-center gap-2 text-2xl">
@@ -38,17 +36,15 @@ export default function WhatIsKi() {
           <br />
           <HorizontalLine />
         </div>
-        <p className="text-2xl font-semibold italic text-[var(--accent-2)]">
-          Where <span className="text-[var(--tx)] font-bold">mind</span> and{" "}
-          <span className="text-[var(--tx)] font-bold">body</span> are{" "}
-          <span className="text-[var(--tx)] font-bold">one</span>
+        <p className="text-2xl font-bold italic text-[var(--tx)]">
+          Where mind and body are one.
         </p>
         <br />
         <HorizontalLine />
       </div>
       {/* The Goldilocks Zone */}
       <div className="bg-[var(--bg-2)] rounded-lg p-6 md:p-8 shadow-sm space-y-4 text-center">
-        <h3 className="text-3xl text-[var(--accent)] mb-6">
+        <h3 className="text-2xl text-[var(--accent)] mb-6">
           Finding the <span className="italic font-semibold">Sweet Spot</span>
         </h3>
         <p className="text-lg leading-relaxed text-[var(--tx)]">
@@ -77,6 +73,7 @@ export default function WhatIsKi() {
           <span className="text-[var(--accent)]">to become superhuman</span>
         </p>
         <br />
+        <BobbingKi />
       </div>
     </div>
   );

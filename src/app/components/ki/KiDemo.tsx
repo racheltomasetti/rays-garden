@@ -4,8 +4,11 @@ export default function KiDemo() {
   return (
     <div className="space-y-8">
       <div className="bg-[var(--bg-2)] rounded-lg p-6 md:p-8 shadow-sm">
-        <h2 className="text-3xl text-[var(--accent)] mb-6 text-center">
-          Ki <span className="italic">in Action</span>
+        <h2 className="text-6xl text-[var(--accent)] mb-3 text-center">
+          <span className="font-semibold">• Ki •</span>{" "}
+        </h2>
+        <h2 className="text-3xl text-[var(--accent)] mb-6 text-center font-semibold">
+          <span className="italic">in action</span>
         </h2>
 
         <div className="space-y-8">

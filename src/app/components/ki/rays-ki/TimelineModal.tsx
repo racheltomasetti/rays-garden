@@ -2,34 +2,21 @@
 
 import { useEffect } from "react";
 import { TimelineItem, Capture, MediaItem, Document } from "@/types/timeline";
-import { X, ChevronLeft, ChevronRight } from "lucide-react";
+import { X } from "lucide-react";
 
 type TimelineModalProps = {
   item: TimelineItem | null;
-  allItems: TimelineItem[];
   onClose: () => void;
-  onNavigate: (direction: "prev" | "next") => void;
 };
 
-export default function TimelineModal({
-  item,
-  allItems,
-  onClose,
-  onNavigate,
-}: TimelineModalProps) {
-  // Keyboard navigation
+export default function TimelineModal({ item, onClose }: TimelineModalProps) {
+  // Keyboard navigation (only Escape to close)
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (!item) return;
 
       if (e.key === "Escape") {
         onClose();
-      } else if (e.key === "ArrowLeft") {
-        e.preventDefault();
-        onNavigate("prev");
-      } else if (e.key === "ArrowRight") {
-        e.preventDefault();
-        onNavigate("next");
       }
     };
 
@@ -38,14 +25,9 @@ export default function TimelineModal({
     }
 
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [item, onClose, onNavigate]);
+  }, [item, onClose]);
 
   if (!item) return null;
-
-  const currentIndex = allItems.findIndex((i) => i.id === item.id);
-  const hasPrev = currentIndex > 0;
-  const hasNext = currentIndex < allItems.length - 1;
-  const positionText = `${currentIndex + 1} of ${allItems.length}`;
 
   const formatTimestamp = (timestamp: string) => {
     return new Date(timestamp).toLocaleDateString("en-US", {
@@ -140,12 +122,12 @@ export default function TimelineModal({
         const doc = item.data as Document;
         return (
           <div className="space-y-4">
-            <h2 className="text-3xl font-bold text-[var(--accent)] italic">
+            <h2 className="text-3xl font-bold text-[var(--accent)] text-center">
               {doc.title}
             </h2>
             <div className="bg-[var(--bg-2)] rounded-lg p-4">
-              <p className="text-[var(--tx-2)] italic">
-                Document content preview coming soon...
+              <p className="text-[var(--tx-2)] italic text-xl text-center">
+                coming soon...
               </p>
             </div>
           </div>
@@ -206,28 +188,7 @@ export default function TimelineModal({
         <div className="p-6">{renderContent()}</div>
 
         {/* Footer */}
-        <div className="flex items-center justify-between p-6 border-t border-[var(--ui-2)]">
-          <div className="flex items-center gap-2">
-            <button
-              onClick={() => onNavigate("prev")}
-              disabled={!hasPrev}
-              className="p-2 rounded-lg bg-[var(--bg-2)] hover:bg-[var(--ui)] text-[var(--tx)] transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
-              title="Previous (←)"
-            >
-              <ChevronLeft className="w-5 h-5" />
-            </button>
-            <span className="text-sm text-[var(--tx-2)] px-2 italic">
-              {positionText}
-            </span>
-            <button
-              onClick={() => onNavigate("next")}
-              disabled={!hasNext}
-              className="p-2 rounded-lg bg-[var(--bg-2)] hover:bg-[var(--ui)] text-[var(--tx)] transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
-              title="Next (→)"
-            >
-              <ChevronRight className="w-5 h-5" />
-            </button>
-          </div>
+        <div className="flex items-center justify-end p-6 border-t border-[var(--ui-2)]">
           <button
             onClick={onClose}
             className="px-4 py-2 rounded-lg bg-[var(--bg-2)] hover:bg-[var(--ui)] text-[var(--tx)] transition-colors italic"

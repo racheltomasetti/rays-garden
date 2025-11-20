@@ -115,7 +115,6 @@ export default function Home() {
 
             {/* Thank you to everyone who has been a part of this journey. */}
             <Acknowledgements />
-            <HorizontalLine />
 
             {/* join the waitlist button */}
             <div className="flex justify-center">

@@ -133,14 +133,20 @@ export default function Timeline({ className = "" }: TimelineProps) {
         <br />
         <BobbingKi />
         <br />
-        <h2 className="text-3xl text-[var(--accent)] italic mb-4">
+        <h2 className="text-3xl text-[var(--accent)] italic mb-4 font-bold">
           The Story of Ki
         </h2>
         <p className="text-2xl text-[var(--tx-2)] italic">is written with</p>
         <br />
-        <p className="text-2xl text-[var(--tx)] italic mb-3">every capture.</p>
-        <p className="text-2xl text-[var(--tx)] italic mb-3">every moment.</p>
-        <p className="text-2xl text-[var(--tx)] italic">every day.</p>
+        <p className="text-2xl text-[var(--tx)] italic mb-3 font-semibold">
+          every capture.
+        </p>
+        <p className="text-2xl text-[var(--tx)] italic mb-3 font-semibold">
+          every moment.
+        </p>
+        <p className="text-2xl text-[var(--tx)] italic font-semibold">
+          every day.
+        </p>
       </div>
       <br />
 

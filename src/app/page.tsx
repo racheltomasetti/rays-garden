@@ -18,6 +18,7 @@ import Waitlist from "./components/ki/Waitlist";
 import KiDemo from "./components/ki/KiDemo";
 import Socials from "./components/ki/Socials";
 import UnlockKi from "./components/ki/UnlockKi";
+import SpinningKi from "./components/ki/SpinningKi";
 
 const WAITLIST_URL =
   "https://docs.google.com/forms/d/e/1FAIpQLSdJq1LRqrQNw7W9mLErJ1EQ86mYHq6iWw5Q3aCcNY_5O5qcDg/viewform?usp=dialog";
@@ -33,6 +34,13 @@ export default function Home() {
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
+      behavior: "smooth",
+    });
+  };
+
+  const scrollToBottom = () => {
+    window.scrollTo({
+      top: document.documentElement.scrollHeight,
       behavior: "smooth",
     });
   };
@@ -80,54 +88,59 @@ export default function Home() {
               <WhatIsKi />
             </div>
             <HorizontalLine />
-
             {/* HOW Ki WORKS */}
             <div id="how-it-works" className="space-y-6">
               {/* KiDEMO goes here */}
               <KiDemo />
               <Timeline />
             </div>
-
             {/* BUILDING Ki */}
             <div id="about-the-builder" className="space-y-6">
               <div className="space-y-6">
-                <div className="bg-[var(--bg-2)] rounded-lg p-6 md:p-8 shadow-sm">
+                <div className="bg-[var(--bg)] rounded-lg p-6 md:p-8 shadow-sm">
+                  <HorizontalLine />
+                  <br />
+                  <br />
+                  {/* Ki logo centered */}
+                  <div className="flex items-center justify-center animate-rotate-in mt-3 mb-6">
+                    <Image
+                      src={
+                        theme === "light"
+                          ? "/assets/ki-light.png"
+                          : "/assets/ki-dark.png"
+                      }
+                      alt="Ki Logo"
+                      width={theme === "light" ? 75 : 75}
+                      height={theme === "light" ? 75 : 75}
+                      priority
+                    />
+                  </div>
                   <p className="text-3xl leading-relaxed text-[var(--accent)] opacity-90 font-semibold text-center italic">
-                    Join us in building
+                    Let&apos;s build together.
                   </p>
-
-                  <p className="text-6xl leading-relaxed text-[var(--accent-2)] opacity-90 text-center font-bold">
-                    ~ Ki ~
-                  </p>
+                  <br />
+                  {/* join the waitlist button */}
+                  <div className="flex justify-center">
+                    <Link
+                      href={WAITLIST_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-block px-6 py-3 rounded-lg bg-[var(--accent)] hover:bg-[var(--accent)]/90 text-white font-semibold transition-colors italic"
+                    >
+                      Join the Community
+                    </Link>
+                  </div>
+                  <br />
                   <br />
                   <Socials />
-                  <br />
-                  <br />
-                  <HorizontalLine />
-                  <br />
-                  <KanbanBoard />
-                  <br />
-                  <HorizontalLine />
-                  <br />
                 </div>
               </div>
             </div>
-            <BobbingKi />
+            <br />
 
             {/* Thank you to everyone who has been a part of this journey. */}
             <Acknowledgements />
 
-            {/* join the waitlist button */}
-            <div className="flex justify-center">
-              <Link
-                href={WAITLIST_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block px-6 py-3 rounded-lg bg-[var(--accent)] hover:bg-[var(--accent)]/90 text-white font-semibold transition-colors italic"
-              >
-                Join the Waitlist
-              </Link>
-            </div>
             <HorizontalLine />
 
             <div className="flex items-center justify-center gap-2 mt-4">

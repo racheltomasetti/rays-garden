@@ -161,11 +161,11 @@ body {
 }
 
 .animate-fade-in {
-  animation: fade-in 0.2s ease-out;
+  animation: fade-in 0.1s ease-out;
 }
 
 .animate-scale-in {
-  animation: scale-in 3s ease-out;
+  animation: scale-in 1s ease-out;
 }
 
 .animate-bob {
@@ -173,7 +173,7 @@ body {
 }
 
 .animate-spin-circle {
-  animation: spin-circle 88s linear infinite; /* 4s per rotation * 22 rotations */
+  animation: spin-circle 60s linear infinite;
 }
 
 .animate-spin-icon {

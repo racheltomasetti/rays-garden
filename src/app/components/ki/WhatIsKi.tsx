@@ -72,8 +72,6 @@ export default function WhatIsKi() {
           utilizing technology to{" "}
           <span className="text-[var(--accent)]">become superhuman.</span>
         </p>
-        <br />
-        <BobbingKi />
       </div>
     </div>
   );

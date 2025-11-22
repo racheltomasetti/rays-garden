@@ -5,6 +5,7 @@ import { X, Info } from "lucide-react";
 import { useModal } from "@/app/contexts/ModalContext";
 import HorizontalLine from "../ui/HorizontalLine";
 import BobbingKi from "./BobbingKi";
+import SpinningKi from "./SpinningKi";
 
 interface SiteNavModalProps {
   isOpen: boolean;
@@ -52,37 +53,34 @@ export default function SiteNavModal({ isOpen, onClose }: SiteNavModalProps) {
         <div className="p-4 sm:p-6 space-y-4 sm:space-y-6 md:space-y-8">
           {/* Quick Navigation */}
           <div className="space-y-2 sm:space-y-3 md:space-y-4">
-            <h3 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-[var(--accent)] text-center">
-              Site Navigation
-            </h3>
             <HorizontalLine />
-            <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-[var(--tx-2)] text-center italic">
-              Tips & Tricks
+            <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-[var(--accent)] text-center italic">
+              Site Tips & Tricks
             </h3>
             <HorizontalLine />
             <div className="space-y-2 sm:space-y-3 text-[var(--tx)]">
               <div className="bg-[var(--ui-2)] rounded-lg p-3 sm:p-4 space-y-1.5 sm:space-y-2">
-                <p className="font-semibold text-sm sm:text-base text-[var(--accent)] text-center">
-                  Top to Bottom
+                <p className="font-semibold text-sm sm:text-base text-[var(--accent-2)] text-center">
+                  Quick Navigation
                 </p>
                 <p className="text-sm sm:text-base text-[var(--tx-2)] text-center">
                   Click{" "}
                   <span className="inline-flex align-middle scale-75 sm:scale-100">
                     <BobbingKi />
                   </span>{" "}
-                  at the top of the page to quickly scroll to the bottom.
+                  to quickly navigate between sections.
                 </p>
               </div>
               <div className="bg-[var(--ui-2)] rounded-lg p-3 sm:p-4 space-y-1.5 sm:space-y-2">
-                <p className="font-semibold text-sm sm:text-base text-[var(--accent)] text-center">
-                  Bottom to Top
+                <p className="font-semibold text-sm sm:text-base text-[var(--accent-2)] text-center">
+                  Dive Deeper
                 </p>
                 <p className="text-sm sm:text-base text-[var(--tx-2)] text-center">
                   Click{" "}
                   <span className="inline-flex align-middle scale-75 sm:scale-100">
-                    <BobbingKi />
+                    <SpinningKi />
                   </span>{" "}
-                  at the bottom of the page to quickly scroll back to the top.
+                  to explore more about Ki.
                 </p>
               </div>
               <div className="bg-[var(--ui-2)] rounded-lg p-3 sm:p-4 space-y-1.5 sm:space-y-2">

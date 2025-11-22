@@ -7,9 +7,8 @@ import {
   getTimelineRange,
   formatTimelineDate,
 } from "@/lib/api/publicTimeline";
-import TimelineModal from "./TimelineModal";
-import BobbingKi from "../BobbingKi";
-import HorizontalLine from "@/app/components/ui/HorizontalLine";
+import SpinningKi from "../SpinningKi";
+import GardenEntryModal from "../../GardenEntryModal";
 
 type TimelineProps = {
   className?: string;
@@ -31,6 +30,7 @@ export default function Timeline({ className = "" }: TimelineProps) {
   );
   const [selectedItem, setSelectedItem] = useState<TimelineItem | null>(null);
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
+  const [isGardenModalOpen, setIsGardenModalOpen] = useState(false);
 
   // Load data on mount
   useEffect(() => {
@@ -131,18 +131,13 @@ export default function Timeline({ className = "" }: TimelineProps) {
     <div className={`w-full ${className}`}>
       <div className="text-center mb-8">
         <br />
-        <BobbingKi />
-        <br />
         <h2 className="text-3xl text-[var(--accent)] italic mb-4 font-bold">
           The Story of Ki
         </h2>
         <p className="text-2xl text-[var(--tx-2)] italic">is written with</p>
         <br />
         <p className="text-2xl text-[var(--tx)] italic mb-3 font-semibold">
-          every capture.
-        </p>
-        <p className="text-2xl text-[var(--tx)] italic mb-3 font-semibold">
-          every moment.
+          every moment,
         </p>
         <p className="text-2xl text-[var(--tx)] italic font-semibold">
           every day.
@@ -309,15 +304,21 @@ export default function Timeline({ className = "" }: TimelineProps) {
                   })}
                 </svg>
 
-                {/* Center label (most recent) */}
-                {dateRange && (
-                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center">
-                    <div className="text-xs text-[var(--tx-2)] italic">Now</div>
-                    <div className="text-xs text-[var(--tx-3)] italic">
-                      {formatTimelineDate(dateRange.end, "short")}
-                    </div>
-                  </div>
-                )}
+                {/* Center - SpinningKi button */}
+                <button
+                  onClick={() => setIsGardenModalOpen(true)}
+                  className="absolute cursor-pointer hover:scale-110 transition-transform"
+                  aria-label="Enter Mind Garden"
+                  style={{
+                    width: "50px",
+                    height: "50px",
+                    top: "calc(50% + 5px)",
+                    left: "calc(50% + 5px)",
+                    transform: "translate(-50%, -50%)",
+                  }}
+                >
+                  <SpinningKi />
+                </button>
 
                 {/* Outer label (earliest) */}
                 {dateRange && (
@@ -405,17 +406,21 @@ export default function Timeline({ className = "" }: TimelineProps) {
                   })}
                 </svg>
 
-                {/* Center label (most recent) */}
-                {dateRange && (
-                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center">
-                    <div className="text-[10px] text-[var(--tx-2)] italic">
-                      Now
-                    </div>
-                    <div className="text-[9px] text-[var(--tx-3)] italic">
-                      {formatTimelineDate(dateRange.end, "short")}
-                    </div>
-                  </div>
-                )}
+                {/* Center - SpinningKi button */}
+                <button
+                  onClick={() => setIsGardenModalOpen(true)}
+                  className="absolute cursor-pointer hover:scale-110 transition-transform"
+                  aria-label="Enter Mind Garden"
+                  style={{
+                    width: "50px",
+                    height: "50px",
+                    top: "calc(50%)",
+                    left: "calc(50% + 2px)",
+                    transform: "translate(-50%, -50%)",
+                  }}
+                >
+                  <SpinningKi />
+                </button>
 
                 {/* Outer label (earliest) */}
                 {dateRange && (
@@ -430,16 +435,14 @@ export default function Timeline({ className = "" }: TimelineProps) {
                 )}
               </div>
             </div>
-            <br />
-            <BobbingKi />
           </div>
         </>
       )}
 
-      {/* Timeline Modal */}
-      <TimelineModal
-        item={selectedItem}
-        onClose={() => setSelectedItem(null)}
+      {/* Garden Entry Modal */}
+      <GardenEntryModal
+        isOpen={isGardenModalOpen}
+        onClose={() => setIsGardenModalOpen(false)}
       />
     </div>
   );

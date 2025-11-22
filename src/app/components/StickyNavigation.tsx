@@ -95,35 +95,41 @@ export default function StickyNavigation() {
             </button>
 
             {/* Logo in the center */}
-            <button onClick={scrollToBottom} className="cursor-pointer">
+            <button
+              onClick={() => scrollToSection("how-it-works")}
+              className="cursor-pointer"
+            >
               <BobbingKi />
             </button>
 
-          {/* Navigation links centered below */}
-          <div className="flex items-center justify-center gap-6 md:gap-8">
-            <button
-              onClick={() => scrollToSection("what-is-ki")}
-              className={getButtonClassName("what-is-ki")}
-            >
-              what is Ki
-            </button>
-            <button
-              onClick={() => scrollToSection("how-it-works")}
-              className={getButtonClassName("how-it-works")}
-            >
-              how Ki works
-            </button>
-            <button
-              onClick={() => scrollToSection("about-the-builder")}
-              className={getButtonClassName("about-the-builder")}
-            >
-              building Ki
-            </button>
+            {/* Navigation links centered below */}
+            <div className="flex items-center justify-center gap-6 md:gap-8">
+              <button
+                onClick={() => scrollToSection("what-is-ki")}
+                className={getButtonClassName("what-is-ki")}
+              >
+                what is Ki
+              </button>
+              <button
+                onClick={() => scrollToSection("how-it-works")}
+                className={getButtonClassName("how-it-works")}
+              >
+                how Ki works
+              </button>
+              <button
+                onClick={() => scrollToSection("about-the-builder")}
+                className={getButtonClassName("about-the-builder")}
+              >
+                building Ki
+              </button>
+            </div>
           </div>
         </div>
-      </div>
-    </nav>
-    <SiteNavModal isOpen={isSiteNavModalOpen} onClose={handleCloseSiteNavModal} />
+      </nav>
+      <SiteNavModal
+        isOpen={isSiteNavModalOpen}
+        onClose={handleCloseSiteNavModal}
+      />
     </>
   );
 }

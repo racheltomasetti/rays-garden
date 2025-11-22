@@ -85,14 +85,28 @@ export default function StickyNavigation() {
       <nav className="sticky top-0 z-50 w-full bg-[var(--bg)] border-b border-[var(--ui-2)] backdrop-blur-sm bg-opacity-95">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <div className="flex flex-col items-center justify-center py-4 gap-3 relative">
-            {/* Info icon in top right */}
-            <button
-              onClick={handleOpenSiteNavModal}
-              className="absolute top-4 right-0 p-2 rounded-lg hover:bg-[var(--ui)] transition-colors"
-              aria-label="Site navigation guide"
-            >
-              <Info className="w-5 h-5 text-[var(--tx-2)] hover:text-[var(--accent)] transition-colors" />
-            </button>
+            {/* Info icon in top right with tooltip */}
+            <div className="absolute top-4 right-0 group">
+              <button
+                onClick={handleOpenSiteNavModal}
+                className="p-2 rounded-lg hover:bg-[var(--ui)] transition-colors relative"
+                aria-label="Site navigation guide"
+              >
+                <Info className="w-5 h-5 text-[var(--tx-2)] hover:text-[var(--accent)] transition-colors" />
+
+                {/* Tooltip */}
+                <div className="absolute right-0 top-full mt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                  <div className="bg-[var(--accent)] text-white text-sm px-3 py-2 rounded-lg shadow-lg whitespace-nowrap">
+                    Site tips & tricks
+                    {/* Arrow */}
+                    <div
+                      className="absolute bottom-full right-4 w-0 h-0 border-l-8 border-r-8 border-b-8 border-l-transparent border-r-transparent"
+                      style={{ borderBottomColor: "var(--accent)" }}
+                    />
+                  </div>
+                </div>
+              </button>
+            </div>
 
             {/* Logo in the center */}
             <button

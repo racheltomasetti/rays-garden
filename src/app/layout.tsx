@@ -5,7 +5,7 @@ import { ModalProvider } from "./contexts/ModalContext";
 import { poppins } from "./fonts";
 
 export const metadata: Metadata = {
-  title: "This is Ki",
+  title: "Welcome to Ki",
   description: "mind garden",
   viewport: {
     width: "device-width",

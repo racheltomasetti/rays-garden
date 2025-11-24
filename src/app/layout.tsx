@@ -27,7 +27,11 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: `
               try {
-                const theme = localStorage.getItem('theme') || 'dark';
+                const manualOverride = localStorage.getItem('themeManualOverride');
+                const savedTheme = localStorage.getItem('theme');
+                const theme = (manualOverride === 'true' && savedTheme)
+                  ? savedTheme
+                  : (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
                 document.documentElement.classList.add(theme);
               } catch (e) {}
             `,

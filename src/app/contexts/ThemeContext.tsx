@@ -15,30 +15,61 @@ const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [theme, setTheme] = useState<Theme>("dark");
   const [mounted, setMounted] = useState(false);
+  const [isManualOverride, setIsManualOverride] = useState(false);
   const router = useRouter();
   const pathname = usePathname();
 
-  // Initialize theme from localStorage or default to dark
+  // Initialize theme from system preference or manual override
   useEffect(() => {
+    const manualOverride = localStorage.getItem("themeManualOverride");
     const savedTheme = localStorage.getItem("theme") as Theme | null;
-    if (savedTheme && (savedTheme === "dark" || savedTheme === "light")) {
+
+    if (manualOverride === "true" && savedTheme) {
+      // User has manually set a preference via keyboard
       setTheme(savedTheme);
+      setIsManualOverride(true);
+    } else {
+      // Use system preference
+      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      setTheme(prefersDark ? "dark" : "light");
+      setIsManualOverride(false);
     }
     setMounted(true);
   }, []);
 
-  // Apply theme to document and save to localStorage
+  // Listen for system theme changes (only if not manually overridden)
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+
+    const handleChange = (e: MediaQueryListEvent) => {
+      // Only auto-update if user hasn't manually overridden
+      if (!isManualOverride) {
+        setTheme(e.matches ? "dark" : "light");
+      }
+    };
+
+    mediaQuery.addEventListener("change", handleChange);
+    return () => mediaQuery.removeEventListener("change", handleChange);
+  }, [isManualOverride]);
+
+  // Apply theme to document
   useEffect(() => {
     if (mounted) {
       const root = document.documentElement;
       root.classList.remove("light", "dark");
       root.classList.add(theme);
-      localStorage.setItem("theme", theme);
+
+      // Only save if manually overridden
+      if (isManualOverride) {
+        localStorage.setItem("theme", theme);
+        localStorage.setItem("themeManualOverride", "true");
+      }
     }
-  }, [theme, mounted]);
+  }, [theme, mounted, isManualOverride]);
 
   const toggleTheme = () => {
     setTheme((prev) => (prev === "dark" ? "light" : "dark"));
+    setIsManualOverride(true); // Mark as manual override when toggled via keyboard
   };
 
   // Keyboard listener for "D" key (theme toggle)

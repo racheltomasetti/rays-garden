@@ -127,7 +127,7 @@ export default function Home() {
                       rel="noopener noreferrer"
                       className="inline-block px-6 py-3 rounded-lg bg-[var(--accent)] hover:bg-[var(--accent)]/90 text-white font-semibold transition-colors italic"
                     >
-                      Join the Community
+                      Join the Waitlist
                     </Link>
                   </div>
                   <p className="text-lg text-[var(--tx)] italic text-center mt-6">

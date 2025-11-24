@@ -81,7 +81,7 @@ export default function UnlockKi() {
               rel="noopener noreferrer"
               className="inline-block px-6 py-3 rounded-lg bg-[var(--accent)] hover:bg-[var(--accent)]/90 text-white font-semibold transition-colors italic hover:cursor-pointer"
             >
-              Join the Community
+              Join the Waitlist
             </Link>
           </div>
         </div>

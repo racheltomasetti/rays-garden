@@ -10,7 +10,7 @@ export default function Socials() {
     <div className="flex flex-row flex-wrap items-center justify-center gap-3">
       <HorizontalLine />
       {/* Unlock Ki */}
-      <p className="text-lg text-[var(--tx-2)] italic">Then click </p>
+      <p className="text-lg text-[var(--tx-2)] italic">Click </p>
       <Link
         href="https://www.unlock-ki.com/"
         target="_blank"

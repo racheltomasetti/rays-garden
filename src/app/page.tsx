@@ -52,7 +52,7 @@ export default function Home() {
   return (
     <div className="min-h-screen w-full">
       {/* Waitlist Modal */}
-      <UnlockKi />
+      {/* <UnlockKi /> */}
 
       {/* Sticky Navigation */}
       <StickyNavigation />
@@ -117,21 +117,6 @@ export default function Home() {
                   </div>
                   <p className="text-3xl leading-relaxed text-[var(--accent)] opacity-90 font-semibold text-center italic">
                     Let&apos;s build together.
-                  </p>
-                  <br />
-                  {/* join the waitlist button */}
-                  <div className="flex justify-center">
-                    <Link
-                      href={WAITLIST_URL}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-block px-6 py-3 rounded-lg bg-[var(--accent)] hover:bg-[var(--accent)]/90 text-white font-semibold transition-colors italic"
-                    >
-                      Join the Waitlist
-                    </Link>
-                  </div>
-                  <p className="text-lg text-[var(--tx)] italic text-center mt-6">
-                    to unlock your Ki.
                   </p>
                   <br />
                   <br />

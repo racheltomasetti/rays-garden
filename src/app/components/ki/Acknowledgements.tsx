@@ -179,8 +179,8 @@ export default function Acknowledgements() {
                   </span>{" "}
                   <span className="italic text-[var(--accent)]">
                     Andrew Huberman, David Senra, Katherine Anne Porter,
-                    mushrooms, Paulo Coelho, Sara Blakely, Steve Jobs, Wim Hof,
-                    yung pueblo, Y Combinator Team, and all other teachers,
+                    mushrooms, Paulo Coelho, Sara Blakely, Steve Jobs, Tiago Forte, Wim Hof,
+                    yung pueblo, and all other teachers,
                   </span>{" "}
                 </p>
                 <p className="text-sm leading-relaxed text-[var(--tx-2)] italic">

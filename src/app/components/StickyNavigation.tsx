@@ -119,19 +119,19 @@ export default function StickyNavigation() {
                 onClick={() => scrollToSection("what-is-ki")}
                 className={getButtonClassName("what-is-ki")}
               >
-                what is Ki
+                What is Ki
               </button>
               <button
                 onClick={() => scrollToSection("how-it-works")}
                 className={getButtonClassName("how-it-works")}
               >
-                how Ki works
+                How Ki Works
               </button>
               <button
                 onClick={() => scrollToSection("about-the-builder")}
                 className={getButtonClassName("about-the-builder")}
               >
-                building Ki
+                Building Ki
               </button>
             </div>
           </div>

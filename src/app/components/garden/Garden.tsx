@@ -15,8 +15,13 @@ import { createMountains } from "./scene/Mountains";
 import MissionModal from "@/app/components/MissionModal";
 import { useTheme } from "@/app/contexts/ThemeContext";
 
-export default function Garden() {
+interface GardenProps {
+  onLighthouseClick?: () => void;
+}
+
+export default function Garden({ onLighthouseClick }: GardenProps) {
   const containerRef = useRef<HTMLDivElement>(null);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const { theme } = useTheme();
 
@@ -50,6 +55,119 @@ export default function Garden() {
     console.log("Garden initialization starting");
 
     console.log("Garden component mounted, initializing Three.js");
+
+    // Initialize and configure audio with seamless looping
+    const audio = new Audio("/story/media/audio/heaven-on-earth.m4a");
+    const MAX_VOLUME = 0.11; // Maximum volume cap (11% to prevent blasting)
+    const baseVolume = MAX_VOLUME; // Base volume set to max cap
+    const fadeDuration = 1; // 1 second fade in/out
+    audio.volume = 0; // Start at 0 for fade-in
+    audioRef.current = audio;
+
+    // Helper function to ensure volume never exceeds max cap
+    const setVolume = (volume: number) => {
+      audio.volume = Math.min(volume, MAX_VOLUME);
+    };
+
+    let isFadingOut = false;
+    let fadeInterval: NodeJS.Timeout | null = null;
+
+    // Fade in function
+    const fadeIn = () => {
+      const startTime = Date.now();
+      const startVolume = audio.volume;
+      const targetVolume = baseVolume;
+      
+      if (fadeInterval) clearInterval(fadeInterval);
+      
+      fadeInterval = setInterval(() => {
+        const elapsed = (Date.now() - startTime) / 1000;
+        if (elapsed < fadeDuration) {
+          const progress = elapsed / fadeDuration;
+          setVolume(startVolume + (targetVolume - startVolume) * progress);
+        } else {
+          setVolume(targetVolume);
+          if (fadeInterval) clearInterval(fadeInterval);
+          fadeInterval = null;
+        }
+      }, 16); // ~60fps updates
+    };
+
+    // Fade out function
+    const fadeOut = () => {
+      const startTime = Date.now();
+      const startVolume = audio.volume;
+      
+      if (fadeInterval) clearInterval(fadeInterval);
+      
+      fadeInterval = setInterval(() => {
+        const elapsed = (Date.now() - startTime) / 1000;
+        if (elapsed < fadeDuration && audio.currentTime < audio.duration) {
+          const progress = elapsed / fadeDuration;
+          setVolume(startVolume * (1 - progress));
+        } else {
+          setVolume(0);
+          if (fadeInterval) clearInterval(fadeInterval);
+          fadeInterval = null;
+          // Reset to beginning and fade in
+          audio.currentTime = 0;
+          isFadingOut = false;
+          fadeIn();
+        }
+      }, 16); // ~60fps updates
+    };
+
+    // Handle seamless loop - fade out near the end
+    const handleTimeUpdate = () => {
+      if (!audio.duration || isFadingOut) return;
+      
+      const timeRemaining = audio.duration - audio.currentTime;
+      
+      // Start fade out 1 second before the end
+      if (timeRemaining <= fadeDuration && timeRemaining > 0.1) {
+        isFadingOut = true;
+        fadeOut();
+      }
+    };
+
+    // Fallback: handle ended event
+    const handleEnded = () => {
+      if (!isFadingOut) {
+        audio.currentTime = 0;
+        setVolume(0);
+        audio.play();
+        fadeIn();
+      }
+    };
+
+    audio.addEventListener("timeupdate", handleTimeUpdate);
+    audio.addEventListener("ended", handleEnded);
+
+    // Attempt to play audio (may require user interaction due to browser policies)
+    const playAudio = async () => {
+      try {
+        await audio.play();
+        console.log("Audio started playing");
+        fadeIn();
+      } catch (error) {
+        console.log("Audio autoplay prevented, will play on user interaction:", error);
+        // If autoplay fails, play on first user interaction
+        const playOnInteraction = () => {
+          audio.play()
+            .then(() => {
+              fadeIn();
+            })
+            .catch(console.error);
+          document.removeEventListener("click", playOnInteraction);
+          document.removeEventListener("touchstart", playOnInteraction);
+        };
+        document.addEventListener("click", playOnInteraction, { once: true });
+        document.addEventListener("touchstart", playOnInteraction, { once: true });
+      }
+    };
+
+    // Start playing audio after a short delay to ensure scene is ready
+    setTimeout(playAudio, 500);
 
     // Prevent zoom/pinch gestures
     const preventZoom = (e: WheelEvent | TouchEvent) => {
@@ -475,6 +593,11 @@ export default function Garden() {
                 }, 200);
               });
 
+              // Call the lighthouse click callback if provided
+              if (onLighthouseClick) {
+                onLighthouseClick();
+              }
+              
               // Open modal
               setIsModalOpen(true);
               return;
@@ -495,6 +618,19 @@ export default function Garden() {
       document.removeEventListener("wheel", preventZoom);
       document.removeEventListener("touchmove", preventZoom);
       cancelAnimationFrame(animationId);
+
+      // Clean up audio
+      if (fadeInterval) {
+        clearInterval(fadeInterval);
+      }
+      if (audioRef.current) {
+        const audio = audioRef.current;
+        audio.removeEventListener("timeupdate", handleTimeUpdate);
+        audio.removeEventListener("ended", handleEnded);
+        audio.pause();
+        audio.src = "";
+        audioRef.current = null;
+      }
 
       // Clean up renderer and geometries
       if (

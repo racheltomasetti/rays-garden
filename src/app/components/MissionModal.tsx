@@ -48,41 +48,30 @@ export default function MissionModal({ isOpen, onClose }: MissionModalProps) {
     >
       {/* Modal Container */}
       <div
-        className="relative w-11/12 max-w-md p-8 pb-12 rounded-lg shadow-2xl animate-scale-in"
+        className="relative w-11/12 max-w-md rounded-lg shadow-2xl animate-scale-in flex items-center justify-center"
         style={{
           backgroundColor: "var(--bg)",
           border: "2px solid var(--ui-2)",
+          minHeight: "200px",
+          padding: "2rem 1.5rem",
         }}
         onClick={(e) => e.stopPropagation()}
       >
         {/* Modal Content */}
-        <div style={{ color: "var(--tx)" }}>
+        <div className="flex flex-col items-center justify-center space-y-4" style={{ color: "var(--tx)" }}>
           <h2
-            className={`text-4xl font-bold mb-6 text-center ${poppins.className}`}
+            className={`text-3xl font-bold text-center ${poppins.className}`}
             style={{ color: "var(--accent)" }}
           >
             CORE MISSION
           </h2>
 
-          <div className={`space-y-4 ${poppins.className}`}>
-            <p
-              className="text-4xl leading-relaxed italic text-center"
-              style={{ color: "var(--tx)" }}
-            >
-              To unlock the mind and connect back to
-              <br />
-              <span className="font-bold">Self</span>
-            </p>
-
-            <p
-              className="text-base leading-relaxed"
-              style={{ color: "var(--tx-2)" }}
-            >
-              {/* Every journey begins with clarity of purpose. This space will hold
-              the guiding principles and vision that drive this digital
-              presence. */}
-            </p>
-          </div>
+          <p
+            className={`text-3xl leading-relaxed italic text-center ${poppins.className}`}
+            style={{ color: "var(--tx)" }}
+          >
+            unlock the mind 
+          </p>
         </div>
 
         {/* Close Button */}

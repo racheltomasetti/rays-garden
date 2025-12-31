@@ -1,6 +1,9 @@
 "use client";
 
+import { useState } from "react";
 import dynamic from "next/dynamic";
+import GardenEntryModal from "@/app/components/GardenEntryModal";
+import EnterButton from "@/app/components/garden/EnterButton";
 
 const Garden = dynamic(() => import("@/app/components/garden/Garden"), {
   ssr: false,
@@ -12,9 +15,19 @@ const Garden = dynamic(() => import("@/app/components/garden/Garden"), {
 });
 
 export default function GardenPage() {
+  const [showTooltip, setShowTooltip] = useState(true);
+  const [hasClickedLighthouse, setHasClickedLighthouse] = useState(false);
+
+  const handleLighthouseClick = () => {
+    setHasClickedLighthouse(true);
+    setShowTooltip(false);
+  };
+
   return (
     <>
-      <Garden />
+      <Garden onLighthouseClick={handleLighthouseClick} />
+      {showTooltip && <GardenEntryModal isOpen={showTooltip} />}
+      {hasClickedLighthouse && <EnterButton />}
     </>
   );
 }

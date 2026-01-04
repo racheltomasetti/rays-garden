@@ -1,6 +1,6 @@
 "use client";
 
-import { poppins } from "@/app/fonts";
+import { perpetua } from "@/app/fonts";
 
 interface GardenEntryModalProps {
   isOpen: boolean;
@@ -13,7 +13,7 @@ export default function GardenEntryModal({
 
   return (
     <div
-      className={`fixed left-1/2 bottom-[10%] z-40 animate-fade-in ${poppins.className}`}
+      className={`fixed left-1/2 bottom-[10%] z-40 animate-fade-in ${perpetua.className}`}
       style={{
         transform: "translateX(-50%)",
         transformOrigin: "center",

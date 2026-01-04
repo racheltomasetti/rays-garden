@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { poppins } from "@/app/fonts";
+import { perpetua } from "@/app/fonts";
 import { useTheme } from "@/app/contexts/ThemeContext";
 
 interface StreamStatus {
@@ -58,7 +58,7 @@ export default function LiveIndicator() {
           className={`
             relative overflow-hidden rounded-2xl
             transition-all duration-300 ease-out
-            ${poppins.className}
+            ${perpetua.className}
           `}
           style={{
             background:

@@ -29,7 +29,7 @@ export default function EnterButton() {
         e.currentTarget.style.transform = "translateX(-50%) scale(1)";
       }}
     >
-      <span>enter mind</span>
+      <span><em>into the mind</em></span>
     </button>
   );
 }

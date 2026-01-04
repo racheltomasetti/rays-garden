@@ -4,6 +4,7 @@ import { useTheme } from "@/app/contexts/ThemeContext";
 import { poppins } from "@/app/fonts";
 import Image from "next/image";
 import iconImage from "@/app/icon.png";
+import DecryptedText from "@/components/DecryptedText";
 
 export default function MindPage() {
   const { theme } = useTheme();
@@ -25,7 +26,17 @@ export default function MindPage() {
         }
       `}</style>
       <div className="min-h-screen w-full flex flex-col items-center justify-center" style={{ backgroundColor: "var(--bg)" }}>
-        <p className="italic text-xl mb-8" style={{ color: "var(--text)" }}>welcome into my mind</p>
+        <DecryptedText
+          text="welcome to my mind"
+          speed={80}
+          animateOn="view"
+          sequential={true}
+          revealDirection="start"
+          className="italic text-xl mb-8 font-medium"
+          encryptedClassName="italic text-xl mb-8 font-medium"
+          style={{ color: "var(--text) text-xl", display: "block" }}
+        />
+        <hr className="w-3/4 mt-8 mb-8" style={{ borderColor: "var(--text)", opacity: 0.3 }} />
         <div className="relative">
           <Image
             src="/assets/red-flowers.png"
@@ -47,7 +58,11 @@ export default function MindPage() {
             />
           </div>
         </div>
-        <p className="italic text-lg mt-8" style={{ color: "var(--text)" }}>let&apos;s have some fun, shall we?</p>
+        <hr className="w-3/4 mt-8" style={{ borderColor: "var(--text)", opacity: 0.3 }} />
+        {/* introduction */}
+        <p className="italic text-md mt-8 text-center max-w-2xl px-4" style={{ color: "var(--text)" }}>my name is rachel tomasetti (ray) <br /> and i am obsessed with the <b>mind.</b></p>
+        <p className="italic text-md mt-8" style={{ color: "var(--text)" }}>now let&apos;s have some fun, shall we?</p>
+ 
       </div>
     </>
   );

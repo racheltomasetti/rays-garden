@@ -15,19 +15,20 @@ const Garden = dynamic(() => import("@/app/components/garden/Garden"), {
 });
 
 export default function GardenPage() {
-  const [showTooltip, setShowTooltip] = useState(true);
-  const [hasClickedLighthouse, setHasClickedLighthouse] = useState(false);
+  // const [showTooltip, setShowTooltip] = useState(true);
+  // const [hasClickedLighthouse, setHasClickedLighthouse] = useState(false);
 
-  const handleLighthouseClick = () => {
-    setHasClickedLighthouse(true);
-    setShowTooltip(false);
-  };
+  // const handleLighthouseClick = () => {
+  //   setHasClickedLighthouse(true);
+  //   setShowTooltip(false);
+  // };
 
   return (
     <>
-      <Garden onLighthouseClick={handleLighthouseClick} />
-      {showTooltip && <GardenEntryModal isOpen={showTooltip} />}
-      {hasClickedLighthouse && <EnterButton />}
+      <Garden />
+      {/* {showTooltip && <GardenEntryModal isOpen={showTooltip} />}
+      {hasClickedLighthouse && <EnterButton />} */}
+      <EnterButton />
     </>
   );
 }

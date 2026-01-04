@@ -14,17 +14,17 @@ export default function MindPage() {
       <style jsx>{`
         @keyframes bob {
           0%, 100% {
-            transform: translate(-50%, -50%) translateY(0px);
+            transform: translate(-50%, 0) translateY(0px);
           }
           50% {
-            transform: translate(-50%, -50%) translateY(-8px);
+            transform: translate(-50%, 0) translateY(-8px);
           }
         }
         .bobbing {
           animation: bob 4s ease-in-out infinite;
         }
       `}</style>
-      <div className="min-h-screen w-full flex flex-col items-center justify-center" style={{ backgroundColor: "var(--bg)" }}>
+      <div className="min-h-screen w-full flex flex-col items-center justify-start pt-8 md:pt-12" style={{ backgroundColor: "var(--bg)" }}>
         <div className="relative">
           <Image
             src="/assets/red-flowers.png"

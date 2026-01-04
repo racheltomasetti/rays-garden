@@ -207,7 +207,15 @@ export default function DecryptedText({
           const isRevealedOrDone = revealedIndices.has(index) || !isScrambling || !isHovering;
 
           return (
-            <span key={index} className={isRevealedOrDone ? className : encryptedClassName} style={{ display: 'inline' }}>
+            <span 
+              key={index} 
+              className={isRevealedOrDone ? className : encryptedClassName} 
+              style={{ 
+                display: 'inline',
+                textRendering: 'optimizeLegibility',
+                isolation: 'isolate'
+              }}
+            >
               {char}
             </span>
           );

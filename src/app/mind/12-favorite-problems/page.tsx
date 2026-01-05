@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import FavProblems from "@/app/components/mind/FavProblems";
 
 export default function FavoriteProblemsPage() {
 
@@ -28,6 +29,10 @@ export default function FavoriteProblemsPage() {
           <span className="text-lg">Back</span>
         </Link>
       </div>
+       {/* Title */}
+       <h1 className="text-3xl md:text-5xl font-bold mb-8 text-center italic" style={{ color: "var(--accent)" }}>
+            My 12 Favorite Problems
+        </h1>
       <hr className="w-full mb-8" style={{ borderColor: "var(--text)", opacity: 0.3 }} />
 
       {/* Content Container */}
@@ -57,32 +62,8 @@ export default function FavoriteProblemsPage() {
 
         <hr className="w-full my-8" style={{ borderColor: "var(--text)", opacity: 0.3 }} />
 
-        {/* Title */}
-        <h1 className="text-3xl md:text-5xl font-bold mb-4 text-center italic" style={{ color: "var(--accent)" }}>
-            My 12 Favorite Problems
-        </h1>
-        {/* Version Header */}
-        <div className="text-center">
-          <h2 className="text-xl font-bold mb-8" style={{ color: "var(--text)" }}>
-            V3.1 (01/05/26)
-          </h2>
-        </div>
-
-        {/* The 12 Problems */}
-        <ol className="space-y-6 list-decimal list-inside text-left text-xl font-semibold italic pb-12" style={{ color: "var(--text)" }}>
-          <li>How can we design a universal system for building self belief?</li>
-          <li>How can I accurately capture & share the evolution of my mind in real-time?</li>
-          <li>What makes me feel most alive?</li>
-          <li>How can I create my desired change?</li>
-          <li>How can technology be used to connect mind, body, & soul?</li>
-          <li>How can I share ki?</li>
-          <li>How can I live in the flow, finding the balance between letting & making things happen?</li>
-          <li>How can we consistently convert thinking into action, even when the path ahead is unclear?</li>
-          <li>How can I remain in the now?</li>
-          <li>Who am I when everything physical & temporary is stripped away?</li>
-          <li>What does it take to change?</li>
-          <li>How can I make it magic?</li>
-        </ol>
+        {/* Favorite Problems Component */}
+        <FavProblems />
       </div>
     </div>
   );

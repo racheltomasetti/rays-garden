@@ -28,24 +28,14 @@ export default function FavoriteProblemsPage() {
           <span className="text-lg">Back</span>
         </Link>
       </div>
-
-      {/* Title */}
-      <h1 className="text-4xl md:text-5xl font-bold mb-8 text-center" style={{ color: "var(--accent)" }}>
-        MY 12 FAVORITE PROBLEMS
-      </h1>
+      <hr className="w-full mb-8" style={{ borderColor: "var(--text)", opacity: 0.3 }} />
 
       {/* Content Container */}
-      <div className="w-full max-w-3xl space-y-8">
+      <div className="w-full max-w-3xl space-y-4">
         {/* Blurb */}
-        <div className="text-left space-y-4" style={{ color: "var(--text)" }}>
-          <p className="text-lg leading-relaxed">
-            The concept of "12 Favorite Problems" is a powerful framework for continuous learning and innovation.
-            By maintaining a list of open-ended questions that genuinely intrigue you, you create a mental filter
-            that helps you recognize relevant insights and connections in your daily life.
-          </p>
-          <p className="text-lg leading-relaxed">
-            These questions serve as North Stars—guiding your curiosity, shaping your learning, and helping you
-            make sense of new information as it relates to what matters most to you.
+        <div className="text-center space-y-4" style={{ color: "var(--text)" }}>
+          <p className="text-xl leading-relaxed italic">
+            Inspired by Richard Feynman&apos;s <br />12 Favorite Problems
           </p>
         </div>
 
@@ -61,33 +51,37 @@ export default function FavoriteProblemsPage() {
               color: "#DAD8CE"
             }}
           >
-            Click here to read more
+            Click here for more
           </a>
         </div>
 
         <hr className="w-full my-8" style={{ borderColor: "var(--text)", opacity: 0.3 }} />
 
+        {/* Title */}
+        <h1 className="text-3xl md:text-5xl font-bold mb-4 text-center italic" style={{ color: "var(--accent)" }}>
+            My 12 Favorite Problems
+        </h1>
         {/* Version Header */}
         <div className="text-center">
-          <h2 className="text-2xl font-bold mb-8" style={{ color: "var(--text)" }}>
+          <h2 className="text-xl font-bold mb-8" style={{ color: "var(--text)" }}>
             V3.1 (01/05/26)
           </h2>
         </div>
 
         {/* The 12 Problems */}
-        <ol className="space-y-6 list-decimal list-inside text-left text-xl font-semibold pb-12" style={{ color: "var(--text)" }}>
-          <li>HOW CAN WE DESIGN A UNIVERSAL SYSTEM FOR BUILDING SELF BELIEF?</li>
-          <li>HOW CAN I ACCURATELY CAPTURE & SHARE THE EVOLUTION OF MY MIND IN REAL-TIME?</li>
-          <li>WHAT MAKES ME FEEL MOST ALIVE?</li>
-          <li>HOW CAN I CREATE MY DESIRED CHANGE?</li>
-          <li>HOW CAN TECHNOLOGY BE USED TO CONNECT MIND, BODY, & SOUL?</li>
-          <li>HOW CAN I SHARE KI?</li>
-          <li>HOW CAN I LIVE IN THE FLOW, FINDING THE BALANCE BETWEEN LETTING & MAKING THINGS HAPPEN?</li>
-          <li>HOW CAN WE CONSISTENTLY CONVERT THINKING INTO ACTION, EVEN WHEN THE PATH AHEAD IS UNCLEAR?</li>
-          <li>HOW CAN I REMAIN IN THE NOW?</li>
-          <li>WHO AM I WHEN EVERYTHING PHYSICAL & TEMPORARY IS STRIPPED AWAY?</li>
-          <li>WHAT DOES IT TAKE TO CHANGE?</li>
-          <li>HOW CAN I MAKE IT MAGIC?</li>
+        <ol className="space-y-6 list-decimal list-inside text-left text-xl font-semibold italic pb-12" style={{ color: "var(--text)" }}>
+          <li>How can we design a universal system for building self belief?</li>
+          <li>How can I accurately capture & share the evolution of my mind in real-time?</li>
+          <li>What makes me feel most alive?</li>
+          <li>How can I create my desired change?</li>
+          <li>How can technology be used to connect mind, body, & soul?</li>
+          <li>How can I share ki?</li>
+          <li>How can I live in the flow, finding the balance between letting & making things happen?</li>
+          <li>How can we consistently convert thinking into action, even when the path ahead is unclear?</li>
+          <li>How can I remain in the now?</li>
+          <li>Who am I when everything physical & temporary is stripped away?</li>
+          <li>What does it take to change?</li>
+          <li>How can I make it magic?</li>
         </ol>
       </div>
     </div>

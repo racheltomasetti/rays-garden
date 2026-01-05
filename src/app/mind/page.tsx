@@ -70,22 +70,17 @@ export default function MindPage() {
           />
         </div>
         <hr className="w-3/4 mt-8 mb-8" style={{ borderColor: "var(--text)", opacity: 0.3 }} />
-        <div className="w-3/4 max-w-2xl">
-          <h2 className="text-xl font-semibold mb-4 text-left" style={{ color: "var(--text)" }}>MY 12 WHYS</h2>
-          <ol className="space-y-4 list-decimal list-inside text-left" style={{ color: "var(--text)" }}>
-          <li>HOW DO WE EXPERIENCE ALL THAT LIFE HAS TO OFFER?</li>
-          <li>WHAT IS UNIVERSALLY TRUE?</li>
-          <li>WHAT INSPIRES ME?</li>
-          <li>WHEN DO I FEEL MOST ALIVE?</li>
-          <li>WHAT DOES IT TAKE TO BUILD MINDSET?</li>
-          <li>WHAT IS MY STORY?</li>
-          <li>WHAT DO I WANT MY STORY TO BE?</li>
-          <li>HOW DO I SHARE KI?</li>
-          <li>WHAT FUTURE DO I ENVISION?</li>
-          <li>ARE MY MIND, BODY, AND HEART IN ALIGNMENT?</li>
-          <li>HOW CAN I UNLOCK THE MIND?</li>
-          <li>DID I GIVE MY ALL TODAY?</li>
-          </ol>
+        <div className="w-3/4 max-w-2xl flex justify-center">
+          <a
+            href="/mind/12-favorite-problems"
+            className="px-8 py-4 text-xl font-bold rounded-lg hover:opacity-80 transition-opacity"
+            style={{
+              backgroundColor: "var(--accent)",
+              color: "#DAD8CE"
+            }}
+          >
+            My 12 Favorite Problems
+          </a>
         </div>
 
       </div>

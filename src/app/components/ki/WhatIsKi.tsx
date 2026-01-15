@@ -1,7 +1,6 @@
 import BobbingKi from "./BobbingKi";
 import Image from "next/image";
 import { useTheme } from "@/app/contexts/ThemeContext";
-import HorizontalLine from "../ui/HorizontalLine";
 
 export default function WhatIsKi() {
   const { theme } = useTheme();
@@ -9,7 +8,6 @@ export default function WhatIsKi() {
     <div className="space-y-6">
       {/* What Ki Does */}
       <div className="bg-[var(--bg)] rounded-lg p-6 md:p-8 space-y-4 text-center">
-        <HorizontalLine />
         <br />
         <h3 className="text-3xl text-[var(--accent)]">
           <span className="font-semibold">AI toolkit</span>{" "}
@@ -19,12 +17,11 @@ export default function WhatIsKi() {
         <br />
         <br />
         <p className="text-xl font-semibold leading-relaxed text-[var(--tx)]">
-          Explore <span className="text-[var(--accent)]">|</span> Create{" "}
+          Explore <span className="text-[var(--accent)]"></span> Create{" "}
           <span className="text-[var(--accent)] ">|</span> Connect
         </p>
         {/* Flow of Knowledge */}
         <div className="py-6 flex flex-col items-center justify-center gap-2 text-2xl">
-          <HorizontalLine />
           <br />
           <span className="text-[var(--tx-3)]">
             <span className="italic">Thoughts</span>
@@ -34,13 +31,11 @@ export default function WhatIsKi() {
           <span className="text-[var(--accent)] text-4xl">↓</span>
           <span className="text-[var(--tx)] italic font-semibold ">Wisdom</span>
           <br />
-          <HorizontalLine />
         </div>
         <p className="text-2xl font-bold italic text-[var(--tx)]">
           Where mind and body are one.
         </p>
         <br />
-        <HorizontalLine />
       </div>
       {/* The Goldilocks Zone */}
       <div className="bg-[var(--bg-2)] rounded-lg p-6 md:p-8 shadow-sm space-y-4 text-center">

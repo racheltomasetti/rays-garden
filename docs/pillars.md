@@ -1,5 +1,4 @@
-10 pillars of ki
-
+pillars of Ki
 1. love
 2. mind
 3. body

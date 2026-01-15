@@ -12,7 +12,7 @@ import {
 } from "./scene/Particles";
 import { createOcean, animateOcean } from "./scene/Ocean";
 import { createMountains } from "./scene/Mountains";
-import MissionModal from "@/app/components/MissionModal";
+import MissionModal from "@/app/components/garden/MissionModal";
 import { useTheme } from "@/app/contexts/ThemeContext";
 
 interface GardenProps {

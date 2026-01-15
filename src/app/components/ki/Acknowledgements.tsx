@@ -1,6 +1,3 @@
-import Image from "next/image";
-import HorizontalLine from "../ui/HorizontalLine";
-
 export default function Acknowledgements() {
   return (
     <>
@@ -240,7 +237,6 @@ export default function Acknowledgements() {
             </div>
           </div>
         </div>
-        <HorizontalLine />
       </div>
     </>
   );

@@ -1,4 +1,3 @@
-import ClickableWord from "../ClickableWord";
 import Image from "next/image";
 
 /* origin story section */
@@ -111,26 +110,7 @@ export default function OriginStory() {
         </p>
         <p className="text-base italic mt-4 text-[var(--accent)] font-bold">
           (
-          <ClickableWord
-            word="phoenix"
-            definition="A mythical bird that cyclically regenerates or is otherwise born again. Associated with the sun, a phoenix obtains new life by rising from the ashes of its predecessor."
-            etymology="From Greek 'phoinix' (φοῖνιξ) meaning 'purple-red' or 'Phoenician'. In Greek mythology, the phoenix was a long-lived bird that was reborn from its own ashes."
-            additionalContext={
-              <>
-                <p className="mb-2">
-                  The phoenix represents transformation, renewal, and the
-                  triumph of life over death. It symbolizes the ability to rise
-                  from ones own destruction, emerging stronger and more
-                  beautiful than before.
-                </p>
-                <p>
-                  In your journey, the phoenix represents the profound
-                  transformation that comes from confronting your darkest
-                  moments and using them as fuel for rebirth.
-                </p>
-              </>
-            }
-          />
+          <span className="text-[var(--accent)] font-bold">phoenix</span>
           )
         </p>
         <br />

@@ -3,7 +3,7 @@
 import { useTheme } from "@/app/contexts/ThemeContext";
 import Image from "next/image";
 import iconImage from "@/app/icon.png";
-import DecryptedText from "@/components/DecryptedText";
+import DecryptedText from "@/app/components/DecryptedText";
 
 export default function MindPage() {
   const { theme } = useTheme();
@@ -49,7 +49,7 @@ export default function MindPage() {
         <hr className="w-3/4 mt-8 mb-8" style={{ borderColor: "var(--text)", opacity: 0.3 }} />
         <div style={{ width: "100%", overflow: "hidden", display: "flex", justifyContent: "center" }}>
           <DecryptedText
-            text="welcome to my mind"
+            text="Welcome to Ki"
             speed={80}
             animateOn="view"
             sequential={true}

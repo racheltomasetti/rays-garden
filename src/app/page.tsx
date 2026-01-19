@@ -1,5 +1,6 @@
 import { getAllPosts } from "@/lib/mdx";
 import PostCard from "./components/PostCard";
+import HeaderWithKi from "./components/HeaderWithKi";
 
 export default function Home() {
   const posts = getAllPosts();
@@ -8,10 +9,8 @@ export default function Home() {
     <div className="min-h-screen bg-[var(--bg)]">
       {/* Header */}
       <header className="border-b border-[var(--ui-2)] bg-[var(--bg)]">
-        <div className="max-w-6xl mx-auto px-6 py-8">
-          <h1 className="text-4xl md:text-5xl font-bold text-[var(--tx)] text-center">
-            into the mind
-          </h1>
+        <div className="max-w-6xl mx-auto px-6 -mt-1 -mb-1">
+          <HeaderWithKi />
         </div>
       </header>
 
@@ -25,7 +24,7 @@ export default function Home() {
 
         {/* Empty State */}
         {posts.length === 0 && (
-          <div className="text-center py-20">
+          <div className="flex items-center justify-center min-h-[calc(100vh-150px)] md:min-h-[calc(100vh-200px)] -mt-8 md:mt-0">
             <p className="text-2xl text-[var(--tx-2)] italic">
               coming soon... 
             </p>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import { useRouter } from "next/navigation";
 import { perpetua } from "@/app/fonts";
 
 interface MissionModalProps {
@@ -9,6 +10,12 @@ interface MissionModalProps {
 }
 
 export default function MissionModal({ isOpen, onClose }: MissionModalProps) {
+  const router = useRouter();
+
+  const handleUnlockMind = () => {
+    router.push("/mind");
+  };
+
   // Handle ESC key to close modal
   useEffect(() => {
     const handleEsc = (event: KeyboardEvent) => {
@@ -66,12 +73,17 @@ export default function MissionModal({ isOpen, onClose }: MissionModalProps) {
             CORE MISSION
           </h2>
 
-          <p
-            className={`text-4xl leading-relaxed font-semibold text-center ${perpetua.className}`}
-            style={{ color: "var(--tx)" }}
+          <button
+            onClick={handleUnlockMind}
+            className={`text-4xl leading-relaxed font-semibold text-center cursor-pointer hover:opacity-80 transition-opacity rounded-lg whitespace-nowrap bg-foreground/5 ${perpetua.className}`}
+            style={{ 
+              color: "var(--tx)",
+              border: "2px solid var(--ui-2)",
+              padding: "0.75rem 1.5rem"
+            }}
           >
-          <em>unlock the mind</em>
-          </p>
+            <em>unlock the mind</em>
+          </button>
         </div>
       </div>
     </div>

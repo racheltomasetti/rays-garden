@@ -5,7 +5,7 @@ import { ModalProvider } from "./contexts/ModalContext";
 import { perpetua } from "./fonts";
 
 export const metadata: Metadata = {
-  title: "Ray's Garden",
+  title: "Ray's Ki",
   description: "mind garden",
 };
 

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { createContext, useContext, useEffect, useState } from "react";
+import React, { createContext, useContext, useEffect, useState, useCallback } from "react";
 import { useRouter, usePathname } from "next/navigation";
 
 type Theme = "dark" | "light";
@@ -67,13 +67,15 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     }
   }, [theme, mounted, isManualOverride]);
 
-  const toggleTheme = () => {
+  const toggleTheme = useCallback(() => {
     setTheme((prev) => (prev === "dark" ? "light" : "dark"));
     setIsManualOverride(true); // Mark as manual override when toggled via keyboard
-  };
+  }, []);
 
   // Keyboard listener for "D" key (theme toggle)
   useEffect(() => {
+    if (typeof window === "undefined" || !mounted) return;
+
     const handleKeyDown = (event: KeyboardEvent) => {
       // Only toggle if not typing in an input/textarea
       const target = event.target as HTMLElement;
@@ -97,7 +99,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
 
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, []);
+  }, [toggleTheme, mounted]);
 
   // Keyboard listener for arrow key navigation (main pages + project pages)
   useEffect(() => {

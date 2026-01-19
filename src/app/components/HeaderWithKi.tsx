@@ -2,6 +2,7 @@
 
 import { useTheme } from "@/app/contexts/ThemeContext";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function HeaderWithKi() {
   const { theme } = useTheme();
@@ -10,14 +11,16 @@ export default function HeaderWithKi() {
 
   return (
     <div className="flex justify-center">
-      <Image
-        src={kiImage}
-        alt="Ki"
-        width={75}
-        height={75}
-        className="object-contain"
-        priority
-      />
+      <Link href="/garden" className="cursor-pointer hover:opacity-80 transition-opacity">
+        <Image
+          src={kiImage}
+          alt="Ki"
+          width={75}
+          height={75}
+          className="object-contain"
+          priority
+        />
+      </Link>
     </div>
   );
 }

@@ -1,6 +1,6 @@
 "use client";
 import dynamic from "next/dynamic";
-import EnterButton from "@/app/components/garden/EnterButton";
+// import EnterButton from "@/app/components/garden/EnterButton";
 
 const Garden = dynamic(() => import("@/app/components/garden/Garden"), {
   ssr: false,
@@ -15,7 +15,7 @@ export default function GardenPage() {
   return (
     <>
       <Garden />
-      <EnterButton />
+      {/* <EnterButton /> */}
     </>
   );
 }

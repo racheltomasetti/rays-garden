@@ -81,7 +81,7 @@ export default async function PostPage({ params }: PostPageProps) {
       </div>
 
       {/* Post Header */}
-      <div className="flex items-center justify-center px-6 py-24 mt-6">
+      <div className="flex items-center justify-center px-6 py-8">
         <header className="bg-[var(--bg-2)] border border-[var(--ui-2)] rounded-lg p-6 shadow-sm w-full max-w-4xl">
           <div className="flex flex-col items-center">
             {/* Title */}

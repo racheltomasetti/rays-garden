@@ -1,16 +1,14 @@
 export type Category =
-  | "Build Log"
-  | "Reflections"
-  | "Stream Notes"
-  | "Guides"
-  | "Ki Updates"
-  | "Field Notes";
+  | "Projects"
+  | "Essays"
+  | "Resources"
+  | "Ki";
 
 export interface PostFrontmatter {
   title: string;
-  date: string;
+  created: string;
+  updated?: string;
   category: Category;
-  excerpt: string;
   featured_image?: string;
 }
 

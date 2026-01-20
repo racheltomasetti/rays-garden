@@ -3,7 +3,15 @@ import path from "path";
 import matter from "gray-matter";
 import { Post, PostFrontmatter, Category } from "@/types/post";
 
-const postsDirectory = path.join(process.cwd(), "content", "posts");
+const contentDirectory = path.join(process.cwd(), "content");
+
+// Category folders - matches the Category type slugs
+const categoryFolders = [
+  "projects",
+  "essays",
+  "resources",
+  "ki",
+];
 
 /**
  * Get all unique categories from existing posts (dynamic discovery)
@@ -22,56 +30,94 @@ export function getCategories(): string[] {
 }
 
 /**
- * Get all posts from the posts directory
+ * Get all posts from all category directories
  */
 export function getAllPosts(): Post[] {
-  if (!fs.existsSync(postsDirectory)) {
-    return [];
-  }
-
-  const files = fs.readdirSync(postsDirectory);
   const allPosts: Post[] = [];
 
-  files.forEach((filename) => {
-    if (filename.endsWith(".mdx") || filename.endsWith(".md")) {
-      const slug = filename.replace(/\.mdx?$/, "");
-      const post = getPostBySlug(slug);
-      if (post) {
-        allPosts.push(post);
-      }
+  categoryFolders.forEach((folder) => {
+    const folderPath = path.join(contentDirectory, folder);
+
+    if (!fs.existsSync(folderPath)) {
+      return;
     }
+
+    const files = fs.readdirSync(folderPath);
+    files.forEach((filename) => {
+      if (filename.endsWith(".mdx") || filename.endsWith(".md")) {
+        const slug = filename.replace(/\.mdx?$/, "");
+        const post = getPostBySlug(slug, folder);
+        if (post) {
+          allPosts.push(post);
+        }
+      }
+    });
   });
 
-  // Sort by date (newest first)
+  // Sort by created date (newest first)
   return allPosts.sort((a, b) => {
-    return new Date(b.frontmatter.date).getTime() - new Date(a.frontmatter.date).getTime();
+    return new Date(b.frontmatter.created).getTime() - new Date(a.frontmatter.created).getTime();
   });
 }
 
 /**
- * Get a single post by slug
+ * Get a single post by slug, optionally from a specific folder
  */
-export function getPostBySlug(slug: string): Post | null {
+export function getPostBySlug(slug: string, folder?: string): Post | null {
   try {
-    // Try .mdx first, then .md
-    let fullPath = path.join(postsDirectory, `${slug}.mdx`);
-    if (!fs.existsSync(fullPath)) {
-      fullPath = path.join(postsDirectory, `${slug}.md`);
+    let fullPath: string | null = null;
+
+    // If folder is specified, look there first
+    if (folder) {
+      const folderPath = path.join(contentDirectory, folder);
+      fullPath = path.join(folderPath, `${slug}.mdx`);
       if (!fs.existsSync(fullPath)) {
-        return null;
+        fullPath = path.join(folderPath, `${slug}.md`);
+        if (!fs.existsSync(fullPath)) {
+          fullPath = null;
+        }
       }
+    }
+
+    // If no folder specified or not found, search all category folders
+    if (!fullPath) {
+      for (const categoryFolder of categoryFolders) {
+        const folderPath = path.join(contentDirectory, categoryFolder);
+        let testPath = path.join(folderPath, `${slug}.mdx`);
+        if (fs.existsSync(testPath)) {
+          fullPath = testPath;
+          break;
+        }
+        testPath = path.join(folderPath, `${slug}.md`);
+        if (fs.existsSync(testPath)) {
+          fullPath = testPath;
+          break;
+        }
+      }
+    }
+
+    if (!fullPath) {
+      return null;
     }
 
     const fileContents = fs.readFileSync(fullPath, "utf8");
     const { data, content } = matter(fileContents);
-    
-    // Ensure date is always a string to avoid timezone issues
-    if (data.date instanceof Date) {
+
+    // Ensure created and updated dates are always strings to avoid timezone issues
+    if (data.created instanceof Date) {
       // Convert Date back to YYYY-MM-DD string format
-      const year = data.date.getUTCFullYear();
-      const month = String(data.date.getUTCMonth() + 1).padStart(2, '0');
-      const day = String(data.date.getUTCDate()).padStart(2, '0');
-      data.date = `${year}-${month}-${day}`;
+      const year = data.created.getUTCFullYear();
+      const month = String(data.created.getUTCMonth() + 1).padStart(2, '0');
+      const day = String(data.created.getUTCDate()).padStart(2, '0');
+      data.created = `${year}-${month}-${day}`;
+    }
+
+    if (data.updated instanceof Date) {
+      // Convert Date back to YYYY-MM-DD string format
+      const year = data.updated.getUTCFullYear();
+      const month = String(data.updated.getUTCMonth() + 1).padStart(2, '0');
+      const day = String(data.updated.getUTCDate()).padStart(2, '0');
+      data.updated = `${year}-${month}-${day}`;
     }
 
     return {
@@ -101,14 +147,24 @@ export function getPostsByCategory(category: string): Post[] {
  * Get all post slugs (for static generation)
  */
 export function getAllPostSlugs(): string[] {
-  if (!fs.existsSync(postsDirectory)) {
-    return [];
-  }
+  const allSlugs: string[] = [];
 
-  const files = fs.readdirSync(postsDirectory);
-  return files
-    .filter((filename) => filename.endsWith(".mdx") || filename.endsWith(".md"))
-    .map((filename) => filename.replace(/\.mdx?$/, ""));
+  categoryFolders.forEach((folder) => {
+    const folderPath = path.join(contentDirectory, folder);
+
+    if (!fs.existsSync(folderPath)) {
+      return;
+    }
+
+    const files = fs.readdirSync(folderPath);
+    const slugs = files
+      .filter((filename) => filename.endsWith(".mdx") || filename.endsWith(".md"))
+      .map((filename) => filename.replace(/\.mdx?$/, ""));
+
+    allSlugs.push(...slugs);
+  });
+
+  return allSlugs;
 }
 
 /**

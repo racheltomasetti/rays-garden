@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { getPostsByCategory, getCategories, getCategoryDisplayName } from "@/lib/mdx";
 import PostCard from "../components/PostCard";
 import Link from "next/link";
+import { getCategoryColor } from "@/lib/categoryColors";
 
 interface CategoryPageProps {
   params: Promise<{
@@ -26,6 +27,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
   }
 
   const displayName = getCategoryDisplayName(category);
+  const categoryColor = getCategoryColor(displayName);
 
   return (
     <div className="min-h-screen bg-[var(--bg)]">
@@ -45,7 +47,10 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
       <header className="border-b border-[var(--ui-2)] bg-[var(--bg)]">
         <div className="max-w-6xl mx-auto px-6 py-8">
           <div className="flex items-center gap-3 mb-2">
-            <span className="bg-[var(--accent)] text-[var(--bg)] px-3 py-1 rounded-full font-medium text-sm">
+            <span
+              className="text-[var(--bg)] px-3 py-1 rounded-full font-medium text-sm"
+              style={{ backgroundColor: categoryColor }}
+            >
               {displayName}
             </span>
             <span className="text-[var(--tx-3)]">{posts.length} posts</span>

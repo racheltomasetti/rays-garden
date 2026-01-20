@@ -31,33 +31,58 @@ export default async function PostPage({ params }: PostPageProps) {
   }
 
   const { frontmatter, content } = post;
-  const { title, date, category: displayCategory, excerpt, featured_image } = frontmatter;
+  const { title, created, updated, featured_image } = frontmatter;
 
-  // Format date (parse manually to avoid timezone issues)
-  let formattedDate: string;
-  const monthAbbreviations = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN",
-    "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
-  
-  // Ensure we're working with a string (gray-matter might parse dates, but we convert them back in mdx.ts)
-  const dateStr = String(date);
-  
-  if (dateStr && dateStr.includes('-')) {
-    // Parse string date directly
-    const dateParts = dateStr.split("-");
-    if (dateParts.length === 3) {
-      const year = parseInt(dateParts[0]);
-      const month = parseInt(dateParts[1]) - 1; // 0-indexed
-      const day = parseInt(dateParts[2]);
-      formattedDate = `${year} ${monthAbbreviations[month]} ${day}`;
+  // Format created date as "Created on January 20, 2026"
+  // Parse date string (YYYY-MM-DD) as local time to avoid timezone issues
+  let formattedCreated: string;
+  const createdStr = String(created);
+
+  try {
+    if (createdStr.includes('-')) {
+      const [year, month, day] = createdStr.split('-').map(Number);
+      const dateObj = new Date(year, month - 1, day); // month is 0-indexed
+      formattedCreated = dateObj.toLocaleDateString("en-US", {
+        month: "long",
+        day: "numeric",
+        year: "numeric",
+      });
     } else {
-      // Fallback
-      const dateObj = new Date(dateStr);
-      formattedDate = `${dateObj.getFullYear()} ${monthAbbreviations[dateObj.getMonth()]} ${dateObj.getDate()}`;
+      const dateObj = new Date(createdStr);
+      formattedCreated = dateObj.toLocaleDateString("en-US", {
+        month: "long",
+        day: "numeric",
+        year: "numeric",
+      });
     }
-  } else {
-    // Fallback to default Date parsing
-    const dateObj = new Date(dateStr || Date.now());
-    formattedDate = `${dateObj.getFullYear()} ${monthAbbreviations[dateObj.getMonth()]} ${dateObj.getDate()}`;
+  } catch {
+    formattedCreated = createdStr;
+  }
+
+  // Format updated date if it exists
+  let formattedUpdated: string | null = null;
+  if (updated) {
+    const updatedStr = String(updated);
+    try {
+      if (updatedStr.includes('-')) {
+        const [year, month, day] = updatedStr.split('-').map(Number);
+        const dateObj = new Date(year, month - 1, day); // month is 0-indexed
+        formattedUpdated = dateObj.toLocaleDateString("en-US", {
+          month: "long",
+          day: "numeric",
+          year: "numeric",
+        });
+      } else {
+        const dateObj = new Date(updatedStr);
+        formattedUpdated = dateObj.toLocaleDateString("en-US", {
+          month: "long",
+          day: "numeric",
+          year: "numeric",
+        });
+      }
+    } catch {
+      formattedUpdated = updatedStr;
+    }
   }
 
   return (
@@ -79,21 +104,14 @@ export default async function PostPage({ params }: PostPageProps) {
             </h1>
             <hr className="w-full border-[var(--ui-2)] mb-4" />
 
-            {/* Category & Date */}
-            <div className="flex items-center gap-3 text-sm">
-              <span className="bg-[var(--accent)] text-white px-3 py-1 rounded-full font-medium font-poppins uppercase tracking-wide">
-                {displayCategory}
-              </span>
-              <span className="text-white px-3 py-1 rounded-full font-medium font-poppins" style={{ backgroundColor: '#54783fff' }}>
-                {formattedDate}
-              </span>
+            {/* Date */}
+            <div className="text-sm text-[var(--tx-2)]">
+              Created on {formattedCreated}
+              {formattedUpdated && (
+                <span> • Updated on {formattedUpdated}</span>
+              )}
             </div>
           </div>
-
-          {/* Excerpt */}
-          <p className="text-lg text-[var(--tx-2)] leading-relaxed text-center mt-4">
-            {excerpt}
-          </p>
         </header>
       </div>
 
@@ -132,6 +150,6 @@ export async function generateMetadata({ params }: PostPageProps) {
 
   return {
     title: `${post.frontmatter.title} | Ray's Garden`,
-    description: post.frontmatter.excerpt,
+    description: `${post.frontmatter.title} - Ray's Garden`,
   };
 }

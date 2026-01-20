@@ -64,7 +64,11 @@ html.light {
   --accent-2: #24837b;
 
   /* Color palette */
+  --terra: #9e2a2b;
+  --ray: #efcb68;
+  --pacific: #58a4b0;
   --sage: #54783fff;
+  --dawn: #e0bad7;
 
   /* Color palette - 600 series (darker shades) for light theme */
   --re: #af3029; /* Red */

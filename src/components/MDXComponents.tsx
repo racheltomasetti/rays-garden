@@ -39,7 +39,7 @@ const MDXComponents = {
     if (isExternal) {
       return (
         <a
-          className="text-[var(--accent)] hover:text-[var(--accent-2)] underline transition-colors"
+          className="text-[var(--tx-2)] hover:text-[var(--accent-2)] font-bold transition-colors"
           target="_blank"
           rel="noopener noreferrer"
           {...props}
@@ -50,7 +50,7 @@ const MDXComponents = {
     return (
       <Link
         href={href}
-        className="text-[var(--accent)] hover:text-[var(--accent-2)] underline transition-colors"
+        className="text-[var(--accent)] hover:text-[var(--accent-2)] font-bold transition-colors"
       >
         {props.children}
       </Link>

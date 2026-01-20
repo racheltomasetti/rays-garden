@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import { ModalProvider } from "./contexts/ModalContext";
-import { perpetua } from "./fonts";
+import { perpetua, merriweather, poppins } from "./fonts";
 
 export const metadata: Metadata = {
   title: "Ray's Ki",
@@ -39,7 +39,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${perpetua.className} antialiased`}>
+      <body className={`${perpetua.className} ${merriweather.variable} ${poppins.variable} antialiased`}>
         <ThemeProvider>
           <ModalProvider>{children}</ModalProvider>
         </ThemeProvider>

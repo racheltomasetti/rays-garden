@@ -64,6 +64,15 @@ export function getPostBySlug(slug: string): Post | null {
 
     const fileContents = fs.readFileSync(fullPath, "utf8");
     const { data, content } = matter(fileContents);
+    
+    // Ensure date is always a string to avoid timezone issues
+    if (data.date instanceof Date) {
+      // Convert Date back to YYYY-MM-DD string format
+      const year = data.date.getUTCFullYear();
+      const month = String(data.date.getUTCMonth() + 1).padStart(2, '0');
+      const day = String(data.date.getUTCDate()).padStart(2, '0');
+      data.date = `${year}-${month}-${day}`;
+    }
 
     return {
       slug,

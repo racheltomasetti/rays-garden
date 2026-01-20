@@ -63,6 +63,9 @@ html.light {
   /* --accent-2: #8f9779; */
   --accent-2: #24837b;
 
+  /* Color palette */
+  --sage: #54783fff;
+
   /* Color palette - 600 series (darker shades) for light theme */
   --re: #af3029; /* Red */
   --or: #bc5215; /* Orange */
@@ -350,6 +353,19 @@ html.light audio.audio-player::-internal-media-controls-overflow-button {
 }
 
 @layer utilities {
+  /* Font utilities */
+  .font-merriweather {
+    font-family: var(--font-merriweather), serif;
+  }
+  .font-poppins {
+    font-family: var(--font-poppins), sans-serif;
+  }
+
+  /* Sage color utility */
+  .bg-sage {
+    background-color: var(--sage);
+  }
+
   /* Accent color utilities */
   .text-accent {
     color: var(--accent);

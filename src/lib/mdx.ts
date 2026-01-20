@@ -203,9 +203,6 @@ export function searchPosts(query: string): Post[] {
   const lowerQuery = query.toLowerCase();
 
   return allPosts.filter((post) => {
-    return (
-      post.frontmatter.title.toLowerCase().includes(lowerQuery) ||
-      post.frontmatter.excerpt.toLowerCase().includes(lowerQuery)
-    );
+    return post.frontmatter.title.toLowerCase().includes(lowerQuery);
   });
 }

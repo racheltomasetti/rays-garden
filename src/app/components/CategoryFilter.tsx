@@ -39,12 +39,12 @@ export default function CategoryFilter({ posts, categories }: CategoryFilterProp
               onClick={() => setSelectedCategory(null)}
               className={`px-2 py-1 sm:px-4 sm:py-2 rounded-full font-medium font-poppins uppercase tracking-wide transition-all flex-shrink-0 text-sm sm:text-base min-w-[60px] sm:min-w-[80px] text-center ${
                 selectedCategory === null
-                  ? "text-white"
+                  ? "text-[#54783fff]"
                   : "text-[var(--tx-2)] hover:text-[var(--tx)]"
               }`}
               style={{
-                backgroundColor: selectedCategory === null ? "#54783fff" : "var(--bg-2)",
-                border: selectedCategory === null ? "none" : "1px solid var(--ui-2)",
+                backgroundColor: "transparent",
+                border: selectedCategory === null ? `2px solid #54783fff` : "1px solid var(--ui-2)",
               }}
             >
               All
@@ -59,12 +59,13 @@ export default function CategoryFilter({ posts, categories }: CategoryFilterProp
                   onClick={() => setSelectedCategory(isSelected ? null : category)}
                   className={`px-2 py-1 sm:px-4 sm:py-2 rounded-full font-medium font-poppins uppercase tracking-wide transition-all flex-shrink-0 text-sm sm:text-base min-w-[60px] sm:min-w-[80px] text-center ${
                     isSelected
-                      ? "text-white"
+                      ? ""
                       : "text-[var(--tx-2)] hover:text-[var(--tx)]"
                   }`}
                   style={{
-                    backgroundColor: isSelected ? categoryColor : "var(--bg-2)",
-                    border: isSelected ? "none" : "1px solid var(--ui-2)",
+                    backgroundColor: "transparent",
+                    border: isSelected ? `2px solid ${categoryColor}` : "1px solid var(--ui-2)",
+                    color: isSelected ? categoryColor : undefined,
                   }}
                 >
                   {category}

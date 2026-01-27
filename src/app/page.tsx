@@ -12,12 +12,12 @@ export default function Home() {
 
       {/* Stream of Consciousness Content */}
       <main className="w-full px-6 py-6">
-        <div className="prose prose-lg max-w-none text-[var(--tx)]">
+        <div className="max-w-none text-[var(--tx)]">
           {/* ki journal */}
-          <h2 className="text-lg font-bold">Tuesday, January 27, 2026 @ 2:07 pm</h2>
+          <h2 className="text-xl font-bold mb-4">Tuesday, January 27, 2026 @ 2:07 pm</h2>
           {/* horizontal rule */}
           <hr className="my-4 border-t border-[var(--ui-2)]" />
-          <p>
+          <p className="text-lg lg:text-xl leading-relaxed">
             i have been trying to figure out what this website is going to be. 
             <br/>i keep restarting and restructuring. 
             <br/>nothing ever feels right.

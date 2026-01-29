@@ -1,10 +1,11 @@
 import HeaderWithKi from "./components/HeaderWithKi";
+import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[var(--bg)]">
+    <div className="min-h-screen bg-[#f6f1e6]">
       {/* Header */}
-      <header className="border-b border-[var(--ui-2)] bg-[var(--bg)]">
+      <header className="border-b border-[#100f0f] bg-[#f6f1e6]">
         <div className="max-w-6xl mx-auto px-6 -mt-1 -mb-1">
           <HeaderWithKi />
         </div>
@@ -12,33 +13,33 @@ export default function Home() {
 
       {/* Stream of Consciousness Content */}
       <main className="w-full px-6 py-6">
-        <div className="max-w-none text-[var(--tx)]">
+        <div className="max-w-none text-[#100f0f]">
           {/* ki journal */}
+          <h2 className="text-xl font-bold mb-4">Wednesday, January 28, 2026 @ 7:45 PM</h2>
+          {/* horizontal rule */}
+          <hr className="my-4 border-t border-[#100f0f]" />
+          <div className="flex justify-center mb-6">
+            <Image 
+              src="/assets/terra-ki-connection.png" 
+              alt="How it is all connected - terra feeds into Ki, terra is ki" 
+              width={800} 
+              height={600}
+              className="w-full max-w-3xl h-auto"
+            />
+          </div>
+          {/* horizontal rule */}
+          <hr className="my-4 border-t border-[#100f0f]" />
+          {/* previous entry */}
           <h2 className="text-xl font-bold mb-4">Tuesday, January 27, 2026 @ 2:07 pm</h2>
           {/* horizontal rule */}
-          <hr className="my-4 border-t border-[var(--ui-2)]" />
+          <hr className="my-4 border-t border-[#100f0f]" />
           <p className="text-lg lg:text-xl leading-relaxed">
-            i have been trying to figure out what this website is going to be. 
-            <br/>i keep restarting and restructuring. 
-            <br/>nothing ever feels right.
-            <br/> all i want to do is build and capture the process. 
-            <br/> to share what i am learning as i am building.
+            <br/> all i want to do is build  
+            <br/> & share what i am learning.
             <br/>
-            <br/> but for some reason, i can&apos;t seem to get out of my damn head.
-            <br/> but then i had a thought today: 
-            <br/> <em>what would life look like if i stopped playing scared and started sharing as if i wanted to be heard?</em>
-            <br/>
-            <br/> because i am dying to be heard.
-            <br/> it took me so long to finally share what i&apos;ve been building.
-            <br/> to share ki.
-            <br/> but i am still holding back.
-            <br/> because i am afraid. 
-            <br/> but afraid of what? of being heard, seen?
-            <br/>
-            <br/> no more of this. 
-            <br/>i&apos;m tired of feeling this way. 
-            <br/> decided this will be my ki journal.
-            <br/> a stream of consciousness while building ki.
+            <br/> <em>what life do i desire?</em> 
+            <br/> building & sharing ki.
+            <br/> this will be my ki journal.
           </p>
         </div>
       </main>

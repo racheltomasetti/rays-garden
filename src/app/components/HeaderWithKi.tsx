@@ -1,6 +1,3 @@
-"use client";
-
-import { useTheme } from "@/app/contexts/ThemeContext";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -9,14 +6,10 @@ interface HeaderWithKiProps {
 }
 
 export default function HeaderWithKi({ showBackButton = false }: HeaderWithKiProps) {
-  const { theme } = useTheme();
-  const kiImage =
-    theme === "dark" ? "/assets/ki-dark.png" : "/assets/ki-light.png";
-
   const kiLogo = (
     <Link href="/garden" className="cursor-pointer hover:opacity-80 transition-opacity">
       <Image
-        src={kiImage}
+        src="/assets/ki-light.png"
         alt="Ki"
         width={75}
         height={75}
@@ -31,7 +24,7 @@ export default function HeaderWithKi({ showBackButton = false }: HeaderWithKiPro
       <div className="flex items-center justify-between relative">
         <Link
           href="/"
-          className="text-[var(--tx)] hover:font-bold transition-colors inline-flex items-center gap-2"
+          className="text-[#100f0f] hover:font-bold transition-colors inline-flex items-center gap-2"
         >
           ← back
         </Link>

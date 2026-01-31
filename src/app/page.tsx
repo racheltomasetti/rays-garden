@@ -34,11 +34,12 @@ export default function Home() {
           {/* horizontal rule */}
           <hr className="my-4 border-t border-[#100f0f]" />
           <p className="text-lg lg:text-xl leading-relaxed">
-            <br/> all i want to do is build &
-            <br/> share what i am learning.
+            <br/> all i want to do is build  
+            <br/> & share what i am learning.
             <br/>
-            <br/> so this will be my ki journal
+            <br/> <em>what life do i desire?</em> 
             <br/> building & sharing ki.
+            <br/> this will be my ki journal.
           </p>
         </div>
       </main>

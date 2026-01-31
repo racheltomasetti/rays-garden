@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import Connect from "./ki/Connect";
 
 interface HeaderWithKiProps {
   showBackButton?: boolean;
@@ -37,8 +38,9 @@ export default function HeaderWithKi({ showBackButton = false }: HeaderWithKiPro
   }
 
   return (
-    <div className="flex justify-center">
+    <div className="flex flex-col items-center gap-3 pb-1">
       {kiLogo}
+      <Connect />
     </div>
   );
 }

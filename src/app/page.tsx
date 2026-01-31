@@ -36,9 +36,7 @@ export default function Home() {
           <p className="text-lg lg:text-xl leading-relaxed">
             <br/> all i want to do is build &
             <br/> share what i am learning.
-            <br/>
-            <br/> so this will be my ki journal
-            <br/> building & sharing ki.
+            <br/> so this will be where i build & share ki.
           </p>
         </div>
       </main>

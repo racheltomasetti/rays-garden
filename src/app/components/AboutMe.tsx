@@ -63,16 +63,7 @@ export default function AboutMe() {
             <br/> and since then, have been obsessed with unlocking it.
             <br/>
             <br/>my mission is simple: <em>to unlock the mind.</em>
-            <br/>how? <strong>by building ai tools for the</strong>{" "}
-            <Link
-              href="https://ai.hubermanlab.com/s/CXLLsQOw"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[var(--terra)] font-bold hover:underline"
-            >
-              Self
-            </Link>
-            .
+            <br/>how? <strong>by building ai tools to connect mind & body.</strong>
             <br/>
             <br/>this website is where i document the journey. 
             <br/><strong>current focus:{" "}

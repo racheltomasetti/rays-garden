@@ -55,8 +55,8 @@ export default function AboutMe() {
            <br/> in may 2023, i was lost with no purpose or direction. 
            <br/> so i made the decision to change everything. 
            <br/> 
-           <br/> i started journaling, running, learning, building. 
            <br/> i stopped scrolling, smoking (temporarily), overthinking, obsessing. 
+           <br/> i started journaling, running, learning, building. 
           </p>
           <p className="text-lg leading-relaxed">
             through this process, i discovered the unlimited power of the mind. 

@@ -46,7 +46,7 @@ export default function Home() {
             <div className="w-full rounded-2xl border border-[#100f0f]/15 bg-[#f6f1e6]/40 p-4 sm:p-6 shadow-sm">
               <div className="flex justify-center">
                 <Image 
-                  src="/assets/3-03-26.png" 
+                  src="/assets/3-03-26.PNG" 
                   alt="3/3/26 entry" 
                   width={800} 
                   height={600}

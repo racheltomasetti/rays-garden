@@ -41,7 +41,7 @@ export default function AboutMe() {
           </h2>
           <p className="text-lg leading-relaxed">
            hey! my name is ray and i am building ki, 
-           <br/> an ai-powered toolkit for the{" "}
+           <br/> a toolkit for the{" "}
             <Link
               href="https://ai.hubermanlab.com/s/CXLLsQOw"
               target="_blank"
@@ -52,21 +52,19 @@ export default function AboutMe() {
             </Link>
             . 
            <br/>
-           <br/> in may 2023, i was lost with no purpose or direction. 
-           <br/> so i made the decision to change everything. 
+           <br/> in may 2023, i had no purpose or direction
+           <br/> & knew something needed to change. 
            <br/> 
-           <br/> i stopped scrolling, smoking (temporarily), overthinking, obsessing. 
-           <br/> i started journaling, running, learning, building. 
+           <br/> i started journaling, running, building. 
+           <br/> i stopped scrolling, overthinking, obsessing. 
           </p>
           <p className="text-lg leading-relaxed">
-            through this process, i discovered the unlimited power of the mind. 
-            <br/> and since then, have been obsessed with unlocking it.
+            i began uncovering the power of the mind
+            <br/>& my mission has become clear:
+            <br/><em>unlock the mind.</em>
             <br/>
-            <br/>my mission is simple: <em>to unlock the mind.</em>
-            <br/>how? <strong>by building ai tools to connect mind & body.</strong>
-            <br/>
-            <br/>this website is where i document the journey. 
-            <br/><strong>current focus:{" "}
+            <br/>this website captures the process. 
+            <br/><br/><strong>current focus:{" "}
             <Link
               href="https://www.unlock-ki.com/terra"
               target="_blank"

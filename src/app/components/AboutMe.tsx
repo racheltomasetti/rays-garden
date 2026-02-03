@@ -37,7 +37,7 @@ export default function AboutMe() {
         </div>
         <div className="order-1 lg:order-2 flex flex-col gap-4 text-[#100f0f] text-center lg:text-left">
           <h2 id="about-me-heading" className="text-2xl font-bold">
-            a bit about me
+            about me
           </h2>
           <p className="text-lg leading-relaxed">
            hey! my name is ray and i am building ki, 

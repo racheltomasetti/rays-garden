@@ -42,14 +42,18 @@ export default function Home() {
             <h2 className="text-lg font-bold mb-3">Wednesday, February 04, 2026 @ 2:36 pm</h2>
           <hr className="w-full border-t border-[#100f0f]/30" />
             <br/>
-              <p className="text-lg lg:text-xl leading-relaxed max-w-2xl mx-auto text-left italic mt-3">~ 49 hours into fast</p>
-              <p className="text-lg lg:text-xl leading-relaxed max-w-2xl mx-auto text-left mt-3"><strong>current state:</strong> hunger has subsided, desire to eat mainly from love of food, energy levels are stable despite lack of sleep, head is clear</p>
+              <div className="w-full max-w-md mx-auto rounded-2xl border border-[#100f0f]/15 bg-[color-mix(in_srgb,var(--accent)_12%,transparent)] p-4 sm:p-5 shadow-sm mb-4">
+                <p className="text-lg lg:text-xl leading-relaxed max-w-2xl mx-auto text-center italic mt-0">~ 49 hours into fast</p>
+                <p className="text-lg lg:text-xl leading-relaxed max-w-2xl mx-auto text-center mt-3"><strong>[current physical state]</strong> 
+                <br/>hunger has subsided, <br/>desire to eat mainly from love of food, <br/>energy levels are stable despite lack of sleep, <br/>head is clear</p>
+              </div>
+              <p className="text-lg lg:text-xl leading-relaxed max-w-2xl mx-auto text-center italic mt-5 font-bold">The time is now.</p>
+              <p className="text-lg lg:text-xl leading-relaxed max-w-2xl mx-auto text-center mt-3 italic">Ki&apos;s tools are designed to unlock the power of the mind, with terra being the first: a tool built to help women believe in their bodies & become the CEO of their health. 
                 <br/>
-              <p className="text-lg lg:text-xl leading-relaxed max-w-2xl mx-auto text-center mt-3 italic">Ki&apos;s tools are designed to unlock the power of the mind, with terra being the first. a tool built to help women believe in their bodies & become the CEO of their health. 
+                <br/>For so long, my cycle was an afterthought. I did not understand what was happening in my own body. As I became increasingly curious of my mind, I inevitably began to explore my body. 
                 <br/>
-                <br/>for so long, my cycle was an afterthought. i did not understand what was happening in my own body. as i became increasingly curious & aware of my mind, i inevitably began to explore my body. 
-                <br/>
-                <br/> now, my cycle is my superpower. the ultimate tool for understanding my Self. a portal into my mind & body. this is what we are building with terra, Ki, & all that is to come.</p>
+                <br/> Now, I understand that my cycle is my superpower. The ultimate tool for understanding my Self. A portal into my mind & body. This is what we are building with terra, Ki, & all that is to come.</p>
+              <p className="text-lg lg:text-xl leading-relaxed max-w-2xl mx-auto text-center italic mt-5 font-bold"> Time to build.</p>
             </div>
           </article>
 
@@ -58,7 +62,8 @@ export default function Home() {
             <div className="w-full rounded-2xl border border-[#100f0f]/15 bg-[#f6f1e6]/40 p-4 sm:p-6 shadow-sm">
             <h2 className="text-lg font-bold mb-3">Tuesday, February 03, 2026 @ 3:28 am</h2>
             <hr className="w-full border-t border-[#100f0f]/30" />
-            <br/>
+            <p className="text-lg lg:text-xl leading-relaxed max-w-2xl mx-auto text-center italic mt-3">13:57:57 into fast</p>
+            <p className="text-lg lg:text-xl leading-relaxed max-w-2xl mx-auto text-center font-bold mb-2">[current build state]</p>
               <div className="flex justify-center">
                 <Image 
                   src="/assets/3-03-26.PNG" 
@@ -68,7 +73,6 @@ export default function Home() {
                   className="w-full max-w-[200px] h-auto rounded-xl"
                 />
               </div>
-              <p className="text-lg lg:text-xl leading-relaxed max-w-2xl mx-auto text-center italic mt-3">13:57:57 into fast</p>
             </div>
           </article>
 
@@ -97,8 +101,8 @@ export default function Home() {
             <br/>
               <div className="flex flex-col gap-4">
                 <p className="text-lg lg:text-xl leading-relaxed text-center">
-                  all i want to do is build & share what i am learning.
-                  <br /> so this will be where i build & share ki.
+                  All I want to do is build & share what I am learning,
+                  <br />so this will be where I build & share ki.
                 </p>
                 <div className="flex justify-center">
                   <Image

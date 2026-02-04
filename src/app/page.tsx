@@ -47,9 +47,9 @@ export default function Home() {
                 <br/>
               <p className="text-lg lg:text-xl leading-relaxed max-w-2xl mx-auto text-center mt-3 italic">Ki&apos;s tools are designed to unlock the power of the mind, with terra being the first. a tool built to help women believe in their bodies & become the CEO of their health. 
                 <br/>
-                <br/>for so long, my cycle was an afterthought. i did not understand what was happening in my own body. as i became increasingly curious & aware of my mind, i inevitably began to explore my body (as they are one & the same). 
+                <br/>for so long, my cycle was an afterthought. i did not understand what was happening in my own body. as i became increasingly curious & aware of my mind, i inevitably began to explore my body. 
                 <br/>
-                <br/> now, i view my cycle as my superpower. the ultimate tool for understanding my Self. a portal into my mind & body. this is what we are building with terra, Ki, & all that is to come.</p>
+                <br/> now, my cycle is my superpower. the ultimate tool for understanding my Self. a portal into my mind & body. this is what we are building with terra, Ki, & all that is to come.</p>
             </div>
           </article>
 

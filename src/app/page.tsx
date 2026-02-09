@@ -35,6 +35,15 @@ export default function Home() {
             <h1 className="text-2xl sm:text-3xl font-bold w-full py-4">
               building ki
             </h1>
+            {/* 02/09/2026 entry */}
+            <article className="w-full flex flex-col items-center">
+            <div className="w-full rounded-2xl border border-[#100f0f]/15 bg-[#f6f1e6]/40 p-4 sm:p-6 shadow-sm">
+            <h2 className="text-lg font-bold mb-3">Monday, February 09, 2026 @ 12:55 am</h2>
+            <hr className="w-full border-t border-[#100f0f]/30" />
+            <p className="text-lg lg:text-xl leading-relaxed max-w-2xl mx-auto text-center italic mt-3 mb-0">please count me out i beg. i love being underestimated. to be fair, i have not given much of an opportunity for anyone to understand what is at play. it took hannah working with me for 3 months to begin to understand the vision. but you must understand that i have operated alone for... always. i am extremely independent. i struggle to open up. but i am working on letting go of my ego. a very uncomfortable & humbling process. </p>
+            </div>
+       
+            </article>
 
             {/* 02/04/2026 entry */}
             <article className="w-full flex flex-col items-center">

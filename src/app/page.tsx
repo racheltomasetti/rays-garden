@@ -1,5 +1,4 @@
 import HeaderWithKi from "./components/HeaderWithKi";
-import AboutMe from "./components/AboutMe";
 import Image from "next/image";
 
 export default function Home() {
@@ -13,9 +12,8 @@ export default function Home() {
       </header>
       
 
-      {/* About Me */}
-      <AboutMe />
-
+      <div className="flex flex-col gap-4 text-[#100f0f] text-center mt-6 mb-2">
+        </div>
       {/* Sun separator */}
       <div className="w-full max-w-4xl mx-auto px-6 flex justify-center py-4">
         <Image

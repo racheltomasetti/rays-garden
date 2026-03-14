@@ -1,48 +1,17 @@
-import type { Metadata, Viewport } from "next";
+import type { Metadata } from "next";
 import "./globals.css";
-import { ThemeProvider } from "./contexts/ThemeContext";
-import { ModalProvider } from "./contexts/ModalContext";
-import { perpetua, merriweather, poppins } from "./fonts";
+import { merriweather, poppins } from "./fonts";
 
 export const metadata: Metadata = {
   title: "raybuilds021",
-  description: "mind garden",
+  description: "rachel tomasetti — founder · builder",
 };
 
-export const viewport: Viewport = {
-  width: "device-width",
-  initialScale: 1,
-  maximumScale: 1,
-  userScalable: false,
-};
-
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <head>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              try {
-                const manualOverride = localStorage.getItem('themeManualOverride');
-                const savedTheme = localStorage.getItem('theme');
-                const theme = (manualOverride === 'true' && savedTheme)
-                  ? savedTheme
-                  : (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-                document.documentElement.classList.add(theme);
-              } catch (e) {}
-            `,
-          }}
-        />
-      </head>
-      <body className={`${perpetua.className} ${merriweather.variable} ${poppins.variable} antialiased`}>
-        <ThemeProvider>
-          <ModalProvider>{children}</ModalProvider>
-        </ThemeProvider>
+    <html lang="en">
+      <body className={`${merriweather.variable} ${poppins.variable}`}>
+        {children}
       </body>
     </html>
   );

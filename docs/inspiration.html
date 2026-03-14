@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ray Tomasetti</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;1,300;1,400&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #100f0f;
+    --text: #f6f1e6;
+    --muted: #6b6760;
+    --line: #242220;
+    --yellow: #efcb68;
+    --serif: 'Merriweather', Georgia, serif;
+    --sans: 'Poppins', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 13px;
+    font-weight: 300;
+    letter-spacing: 0.01em;
+    line-height: 1.8;
+    min-height: 100vh;
+  }
+
+  .container {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  nav {
+    padding: 2.5rem 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-name {
+    font-family: var(--sans);
+    font-size: 11px;
+    font-weight: 300;
+    letter-spacing: 0.12em;
+    text-transform: lowercase;
+    color: var(--muted);
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-family: var(--sans);
+    font-size: 11px;
+    font-weight: 300;
+    letter-spacing: 0.1em;
+    text-transform: lowercase;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .nav-links a:hover { color: var(--text); }
+
+  .hero {
+    padding: 3rem 0 6vh;
+  }
+
+  .hero-eyebrow {
+    font-family: var(--sans);
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 1.6rem;
+  }
+
+  .hero-name {
+    font-family: var(--serif);
+    font-size: clamp(3rem, 8vw, 5.2rem);
+    font-weight: 300;
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    margin-bottom: 1.8rem;
+  }
+
+  .hero-name em {
+    font-style: italic;
+    color: var(--yellow);
+  }
+
+  .hero-line {
+    width: 40px;
+    height: 1px;
+    background: var(--line);
+    margin-bottom: 1.8rem;
+  }
+
+  .hero-text {
+    font-family: var(--serif);
+    font-size: 1rem;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--muted);
+    line-height: 2;
+  }
+
+  .hero-location {
+    margin-top: 0.5rem;
+    font-family: var(--sans);
+    font-size: 10px;
+    font-weight: 300;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+    opacity: 0.5;
+  }
+
+  .divider {
+    border: none;
+    border-top: 1px solid var(--line);
+    margin: 0;
+  }
+
+  section {
+    padding: 4.5rem 0;
+  }
+
+  .section-label {
+    font-family: var(--sans);
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 2.5rem;
+  }
+
+  .about-text {
+    font-family: var(--serif);
+    font-size: clamp(1.05rem, 2.5vw, 1.3rem);
+    font-weight: 300;
+    line-height: 1.9;
+    color: var(--text);
+    opacity: 0.85;
+  }
+
+  .about-text p + p { margin-top: 1.4em; }
+  .about-text em { color: var(--yellow); font-style: italic; }
+
+  .about-detail {
+    margin-top: 3rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    border-top: 1px solid var(--line);
+    padding-top: 2rem;
+  }
+
+  .detail-label {
+    font-family: var(--sans);
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.5rem;
+  }
+
+  .detail-value {
+    font-family: var(--sans);
+    font-size: 11px;
+    font-weight: 300;
+    color: var(--text);
+    opacity: 0.55;
+    line-height: 1.9;
+  }
+
+  .work-item {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: start;
+    gap: 2rem;
+    padding: 2rem 0;
+    border-top: 1px solid var(--line);
+    text-decoration: none;
+    color: inherit;
+    transition: opacity 0.2s ease;
+  }
+
+  .work-item:last-child { border-bottom: 1px solid var(--line); }
+  a.work-item:hover { opacity: 0.6; }
+
+  .work-title {
+    font-family: var(--serif);
+    font-size: 1.4rem;
+    font-weight: 300;
+    color: var(--text);
+    margin-bottom: 0.4rem;
+  }
+
+  .work-desc {
+    font-family: var(--sans);
+    font-size: 11px;
+    font-weight: 300;
+    color: var(--muted);
+    line-height: 1.9;
+  }
+
+  .work-arrow {
+    font-family: var(--sans);
+    font-size: 11px;
+    color: var(--muted);
+    padding-top: 0.3rem;
+  }
+
+  .link-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.4rem 0;
+    border-top: 1px solid var(--line);
+    text-decoration: none;
+    color: inherit;
+    transition: opacity 0.2s ease;
+  }
+
+  .link-row:last-child { border-bottom: 1px solid var(--line); }
+  a.link-row:hover .link-label { color: var(--text); }
+  a.link-row:hover .link-arrow { color: var(--text); }
+
+  .link-left { display: flex; align-items: center; gap: 1rem; }
+
+  .link-label {
+    font-family: var(--sans);
+    font-size: 11px;
+    font-weight: 300;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    transition: color 0.2s ease;
+  }
+
+  .link-handle {
+    font-family: var(--sans);
+    font-size: 10px;
+    font-weight: 300;
+    color: #3a3835;
+    letter-spacing: 0.05em;
+  }
+
+  .link-arrow {
+    font-family: var(--sans);
+    font-size: 11px;
+    color: var(--line);
+    transition: color 0.2s ease;
+  }
+
+  footer {
+    padding: 3rem 0;
+    border-top: 1px solid var(--line);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-copy {
+    font-family: var(--sans);
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    opacity: 0.4;
+  }
+
+  .footer-email a {
+    font-family: var(--sans);
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    text-decoration: none;
+    opacity: 0.4;
+    transition: opacity 0.2s ease;
+  }
+
+  .footer-email a:hover { opacity: 1; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  nav { animation: fadeUp 0.6s ease forwards; }
+  .hero { animation: fadeUp 0.7s 0.05s ease both; }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <nav>
+    <span class="nav-name">raybuilds021</span>
+    <ul class="nav-links">
+      <li><a href="#about">about</a></li>
+      <li><a href="#work">work</a></li>
+      <li><a href="#links">links</a></li>
+    </ul>
+  </nav>
+
+  <div class="hero">
+    <p class="hero-eyebrow">founder · builder</p>
+    <h1 class="hero-name">Rachel<br><em>Tomasetti</em></h1>
+    <div class="hero-line"></div>
+    <p class="hero-text">building tools to unlock the mind.</p>
+    <p class="hero-location">connecticut → miami</p>
+  </div>
+
+  <hr class="divider">
+
+  <section id="about">
+    <p class="section-label">about</p>
+    <div class="about-text">
+      <p>I've always been drawn to the interior — the mind, how it works, what it holds, what it's capable of becoming.</p>
+      <p>On May 28, 2023, something shifted. I began going inward deliberately — journaling, running, cycle awareness, presence. Three years of lived experimentation became the foundation for Ki.</p>
+      <p>Ki is not a startup that emerged from a market gap. It emerged from a question I couldn't stop asking: <em>what is a human being actually capable of, when they truly understand themselves?</em></p>
+    </div>
+    <div class="about-detail">
+      <div>
+        <p class="detail-label">background</p>
+        <p class="detail-value">BS Innovation, Technology & Design<br>University of Miami, 2025</p>
+      </div>
+      <div>
+        <p class="detail-label">building</p>
+        <p class="detail-value">Ki LLC — full time<br>since September 2025</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <section id="work">
+    <p class="section-label">work</p>
+    <div>
+      <a class="work-item" href="https://unlock-ki.com" target="_blank">
+        <div>
+          <p class="work-title">Ki</p>
+          <p class="work-desc">an AI-powered platform for personal transformation.<br>tools for the examined life — mind, body, cycle.</p>
+        </div>
+        <span class="work-arrow">↗</span>
+      </a>
+      <div class="work-item" style="cursor: default;">
+        <div>
+          <p class="work-title">Terra</p>
+          <p class="work-desc">Ki's first app. cycle tracking and pattern visualization<br>for women who want to understand their bodies.</p>
+        </div>
+        <span class="work-arrow" style="opacity:0.25; font-size: 10px; padding-top: 0.5rem;">soon</span>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <section id="links">
+    <p class="section-label">find me</p>
+    <div>
+      <a class="link-row" href="https://unlock-ki.com" target="_blank">
+        <div class="link-left">
+          <span class="link-label">ki</span>
+          <span class="link-handle">unlock-ki.com</span>
+        </div>
+        <span class="link-arrow">↗</span>
+      </a>
+      <a class="link-row" href="https://instagram.com/raybuilds021" target="_blank">
+        <div class="link-left">
+          <span class="link-label">instagram</span>
+          <span class="link-handle">@raybuilds021</span>
+        </div>
+        <span class="link-arrow">↗</span>
+      </a>
+      <a class="link-row" href="https://linkedin.com/in/racheltomasetti" target="_blank">
+        <div class="link-left">
+          <span class="link-label">linkedin</span>
+          <span class="link-handle">racheltomasetti</span>
+        </div>
+        <span class="link-arrow">↗</span>
+      </a>
+      <div class="link-row" style="cursor: default; opacity: 0.25;">
+        <div class="link-left">
+          <span class="link-label">youtube</span>
+          <span class="link-handle">coming soon</span>
+        </div>
+        <span class="link-arrow">—</span>
+      </div>
+      <div class="link-row" style="cursor: default; opacity: 0.25;">
+        <div class="link-left">
+          <span class="link-label">substack</span>
+          <span class="link-handle">coming soon</span>
+        </div>
+        <span class="link-arrow">—</span>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span class="footer-copy">© 2026 rachel tomasetti</span>
+    <span class="footer-email"><a href="mailto:ray@unlock-ki.com">ray@unlock-ki.com</a></span>
+  </footer>
+
+</div>
+</body>
+</html>

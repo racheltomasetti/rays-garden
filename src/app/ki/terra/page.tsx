@@ -10,10 +10,10 @@ export default function TerraPage() {
     <div className="container">
 
       <nav>
-        <Link href="/ki" className="nav-name" style={{ textDecoration: "none" }}>← ki</Link>
-        <ul className="nav-links">
+        <Link href="/" className="nav-name" style={{ textDecoration: "none" }}>←</Link>
+        {/* <ul className="nav-links">
           <li><a href="https://unlock-ki.com" target="_blank" rel="noopener noreferrer">visit ki ↗</a></li>
-        </ul>
+        </ul> */}
       </nav>
 
       {/* Hero */}

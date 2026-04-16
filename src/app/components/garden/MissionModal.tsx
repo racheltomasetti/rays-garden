@@ -13,7 +13,7 @@ export default function MissionModal({ isOpen, onClose }: MissionModalProps) {
   const router = useRouter();
 
   const handleUnlockMind = () => {
-    router.push("/mind");
+    router.push("/");
   };
 
   // Handle ESC key to close modal

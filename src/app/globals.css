@@ -386,6 +386,14 @@ footer {
 
 .footer-email a:hover { opacity: 1; }
 
+.logo-link {
+  display: block;
+  opacity: 1;
+  transition: opacity 0.2s ease;
+}
+
+.logo-link:hover { opacity: 0.75; }
+
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }

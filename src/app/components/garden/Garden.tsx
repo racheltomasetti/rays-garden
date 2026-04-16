@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import * as THREE from "three";
 import { createLighthouse } from "./scene/Lighthouse";
 import { populateGarden } from "./scene/Plants";
@@ -12,7 +12,6 @@ import {
 } from "./scene/Particles";
 import { createOcean, animateOcean } from "./scene/Ocean";
 import { createMountains } from "./scene/Mountains";
-import MissionModal from "@/app/components/garden/MissionModal";
 import { useTheme } from "@/app/contexts/ThemeContext";
 
 interface GardenProps {
@@ -21,7 +20,6 @@ interface GardenProps {
 
 export default function Garden({ onLighthouseClick }: GardenProps) {
   const containerRef = useRef<HTMLDivElement>(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
   const { theme } = useTheme();
 
   // Refs to store scene objects for theme transitions
@@ -477,13 +475,10 @@ export default function Garden({ onLighthouseClick }: GardenProps) {
                 }, 200);
               });
 
-              // Call the lighthouse click callback if provided
+              // Navigate away
               if (onLighthouseClick) {
                 onLighthouseClick();
               }
-              
-              // Open modal
-              setIsModalOpen(true);
               return;
             }
             obj = obj.parent;
@@ -727,16 +722,10 @@ export default function Garden({ onLighthouseClick }: GardenProps) {
   }, [theme]);
 
   return (
-    <>
-      <div
-        ref={containerRef}
-        className="w-full h-screen fixed top-0 left-0 overflow-hidden"
-        style={{ margin: 0, padding: 0 }}
-      />
-      <MissionModal
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-      />
-    </>
+    <div
+      ref={containerRef}
+      className="w-full h-screen fixed top-0 left-0 overflow-hidden"
+      style={{ margin: 0, padding: 0 }}
+    />
   );
 }

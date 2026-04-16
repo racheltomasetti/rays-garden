@@ -181,35 +181,56 @@ export default function Garden({ onLighthouseClick }: GardenProps) {
     sceneRefs.current.stars = stars;
     console.log("Stars added to sky");
 
+    const getContainerSize = () => {
+      const container = containerRef.current;
+      const containerWidth = container?.clientWidth ?? 0;
+      const containerHeight = container?.clientHeight ?? 0;
+      return {
+        width: containerWidth > 0 ? containerWidth : window.innerWidth,
+        height: containerHeight > 0 ? containerHeight : window.innerHeight,
+      };
+    };
+    const initialSize = getContainerSize();
+    const initialSquareSize = Math.max(
+      1,
+      Math.round(Math.min(initialSize.width, initialSize.height))
+    );
+    let lastSyncedSize = initialSquareSize;
+
     // Create camera with responsive positioning
     const camera = new THREE.PerspectiveCamera(
       65,
-      window.innerWidth / window.innerHeight,
+      1,
       0.1,
       100
     );
 
-    const updateCameraView = (mobileView: boolean) => {
-      // Wider, farther framing to emphasize the full scene + distant lighthouse
-      camera.fov = mobileView ? 68 : 64;
-      if (mobileView) {
-        camera.position.set(5.2, 3, 8.2);
+    const updateCameraView = (width: number) => {
+      const isMobile = width < 768;
+      if (isMobile) {
+        camera.fov = 68;
+        camera.position.set(6.0, 3.25, 8.9);
       } else {
-        camera.position.set(7.2, 3.9, 10.2);
+        camera.fov = 62;
+        camera.position.set(6.4, 3.5, 9.3);
       }
       camera.lookAt(-2, 1.5, -2);
       camera.updateProjectionMatrix();
     };
 
-    // Adjust camera based on screen size
-    const isMobile = window.innerWidth < 768;
-    updateCameraView(isMobile);
+    // Adjust camera based on container size
+    updateCameraView(initialSquareSize);
     console.log("Camera created");
 
     // Create renderer
     const renderer = new THREE.WebGLRenderer({ antialias: true });
-    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setSize(initialSquareSize, initialSquareSize, false);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.domElement.style.position = "absolute";
+    renderer.domElement.style.inset = "0";
+    renderer.domElement.style.width = "100%";
+    renderer.domElement.style.height = "100%";
+    renderer.domElement.style.display = "block";
     containerRef.current.appendChild(renderer.domElement);
     console.log("Renderer created and canvas appended");
 
@@ -328,6 +349,18 @@ export default function Garden({ onLighthouseClick }: GardenProps) {
     const animate = () => {
       animationId = requestAnimationFrame(animate);
 
+      // Keep camera/renderer locked to the actual rendered portal size.
+      // Mobile browsers can report unstable initial dimensions until after scroll.
+      const rect = renderer.domElement.getBoundingClientRect();
+      const currentSize = Math.max(1, Math.round(Math.min(rect.width, rect.height)));
+      if (currentSize !== lastSyncedSize) {
+        lastSyncedSize = currentSize;
+        camera.aspect = 1;
+        camera.updateProjectionMatrix();
+        renderer.setSize(currentSize, currentSize, false);
+        updateCameraView(currentSize);
+      }
+
       const time = clock.getElapsedTime();
       const deltaTime = time - lastTime;
       lastTime = time;
@@ -420,15 +453,26 @@ export default function Garden({ onLighthouseClick }: GardenProps) {
 
     // Handle resize with responsive camera positioning
     const handleResize = () => {
-      camera.aspect = window.innerWidth / window.innerHeight;
+      const nextSize = getContainerSize();
+      const nextSquareSize = Math.max(
+        1,
+        Math.round(Math.min(nextSize.width, nextSize.height))
+      );
+      camera.aspect = 1;
       camera.updateProjectionMatrix();
-      renderer.setSize(window.innerWidth, window.innerHeight);
+      renderer.setSize(nextSquareSize, nextSquareSize, false);
 
-      // Adjust camera position based on new screen size
-      const isMobile = window.innerWidth < 768;
-      updateCameraView(isMobile);
+      // Adjust camera framing based on the actual portal viewport size
+      updateCameraView(nextSquareSize);
+      lastSyncedSize = nextSquareSize;
     };
     window.addEventListener("resize", handleResize);
+    window.visualViewport?.addEventListener("resize", handleResize);
+    const resizeObserver = new ResizeObserver(() => {
+      handleResize();
+    });
+    resizeObserver.observe(containerRef.current);
+    requestAnimationFrame(handleResize);
 
     // Handle clicks on lighthouse (raycaster for 3D object picking)
     const raycaster = new THREE.Raycaster();
@@ -436,8 +480,9 @@ export default function Garden({ onLighthouseClick }: GardenProps) {
 
     const handleClick = (event: MouseEvent) => {
       // Calculate mouse position in normalized device coordinates (-1 to +1)
-      mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
-      mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+      const rect = renderer.domElement.getBoundingClientRect();
+      mouse.x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
+      mouse.y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
 
       // Update raycaster with camera and mouse position
       raycaster.setFromCamera(mouse, camera);
@@ -493,6 +538,8 @@ export default function Garden({ onLighthouseClick }: GardenProps) {
     return () => {
       console.log("Cleaning up garden");
       window.removeEventListener("resize", handleResize);
+      window.visualViewport?.removeEventListener("resize", handleResize);
+      resizeObserver.disconnect();
       window.removeEventListener("click", handleClick);
       document.removeEventListener("wheel", preventZoom);
       document.removeEventListener("touchmove", preventZoom);
@@ -724,7 +771,7 @@ export default function Garden({ onLighthouseClick }: GardenProps) {
   return (
     <div
       ref={containerRef}
-      className="w-full h-screen fixed top-0 left-0 overflow-hidden"
+      className="absolute inset-0 w-full h-full overflow-hidden"
       style={{ margin: 0, padding: 0 }}
     />
   );

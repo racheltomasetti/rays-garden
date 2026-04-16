@@ -23,7 +23,7 @@ export default function Home() {
 
       {/* Etymology */}
       <section>
-        <p className="section-label">origin story</p>
+        {/* <p className="section-label">origin story</p> */}
         {/* <div className="about-text">
           <p>ki (氣/気) is an ancient East Asian concept meaning life force, vital energy, breath. it is the invisible current that flows through all living things — the essence of being alive and conscious.</p>
           <p>in traditional practice, cultivating ki means <em>harmonizing mind, body, and spirit.</em> it is developed through presence, breath, and intentional practice. when your ki flows freely, you are aligned with your true nature.</p>

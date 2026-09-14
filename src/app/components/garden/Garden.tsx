@@ -522,7 +522,6 @@ export default function Garden({ onLighthouseClick }: GardenProps) {
                 }, 200);
               });
 
-              // Navigate away
               if (onLighthouseClick) {
                 onLighthouseClick();
               }

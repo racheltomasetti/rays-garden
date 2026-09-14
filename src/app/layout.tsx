@@ -3,6 +3,7 @@ import "./globals.css";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import { ModalProvider } from "./contexts/ModalContext";
 import { perpetua, merriweather, poppins, bebasNeue } from "./fonts";
+import { SanityLive } from "@/sanity/lib/live";
 
 export const metadata: Metadata = {
   title: "Rachel Tomasetti",
@@ -44,6 +45,7 @@ export default function RootLayout({
         <ThemeProvider>
           <ModalProvider>{children}</ModalProvider>
         </ThemeProvider>
+        <SanityLive />
       </body>
     </html>
   );
